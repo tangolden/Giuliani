@@ -4,6 +4,9 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+  :root {
+    --w-column: 200px;
+  }
   #hero {
     position: relative;
     /* prevents overflow from the lines extending past the screen width */
@@ -44,6 +47,7 @@
     z-index: 999;
     width: 70%;
     height: 100%;
+    right: var(--w-column);
     display: flex;
     flex-direction: column;
     justify-content: center;
