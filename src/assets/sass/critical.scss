@@ -7,15 +7,14 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     :root {
-        --w-column: 200px;
+        --w-column: 100px;
     }
 
     #hero {
         position: relative;
         /* prevents overflow from the lines extending past the screen width */
         overflow: hidden;
-        list-style: none;
-        background-image: #0E0F0F;
+        background-image: radial-gradient(#2b2e4f, #111126);
         height: 100vh;
 
         .cs-container {
@@ -23,6 +22,28 @@
             margin: auto;
             width: min(1200px, 90vw);
             height: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: var(--w-column);
+                width: 100%;
+                border-top: 1px solid #324073;
+                border-bottom: 1px solid #324073;
+                top: 52%;
+                pointer-events: none;
+            } 
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: var(--w-column);
+                width: var(--w-column);
+                height: 100%;
+                border-left: 1px solid #324073;
+                border-right: 1px solid #324073;
+                pointer-events: none;
+            }  
         }
 
         .item {
@@ -37,16 +58,22 @@
             transform: translateY(-50%);
 
             img {
-                width: 85%;
-                height: 85%;
+                width: 90%;
+                height: 90%;
                 object-fit: cover;
-                transform: rotate(-30deg);
+                transform: rotate(-25deg);
             }
 
-            /* shadow come back to it bc you need to finalise the shoe img size first as shadow will reflect it */
             &::before {
                 content: '';
-                display: none;
+                position: absolute;
+                background-color: #0b0b0b;
+                width: 100%;
+                height: 100px;
+                top: 90%;
+                left: 50px;
+                filter: blur(50px);
+                border-radius: 50%;
             }
         }
 
@@ -64,80 +91,125 @@
         }
 
         .cs-topper {
+            font-weight: 500;
             margin-bottom: calc(16 / 16 * 1rem);
             color: var(--primary);
-            text-align: center;
         }
 
         .cs-title {
-            width: 100%;
-            color: var(--bodyTextColorWhite);
-            text-align: center;
+            font-family: 'League Gothic';
+            color: var(--bodyTextColor);
+            text-transform: uppercase;
+            font-size: 8.3em;
+            line-height: 1em;
         }
 
         .cs-text {
-            /* 32px - 40px */
-            margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
-            /* 40px - 48px */
-            margin-bottom: clamp(2.5rem, 4vw, 3rem);
             color: var(--bodyTextColorWhite);
-            text-align: center;
+            text-align: right;
+            max-width: 400px;
+            font-size: small;
         }
 
-        .cs-button-solid {
-            margin-bottom: calc(16 / 16 * 1rem);
-            height: initial;
-            line-height: clamp(2.875em, 5.5vw, 3.5em);
-        }
+        .more {
+            display: grid;
+            grid-template-columns: repeat(2, 120px);
+            gap: 20px;
+            grid-template-rows: 35px;
+        
 
-        .cs-button-transparent {
-            z-index: 1;
-            position: relative;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid var(--bodyTextColorWhite);
-            margin: 0 calc(8 / 16 * 1rem);
-            background-color: transparent;
-            /* 46px - 56px */
-            height: clamp(2.875em, 5.5vw, 3.5em);
-            width: calc(180 / 16 * 1rem);
-            box-sizing: border-box;
-            padding: 0;
-            text-decoration: none;
-            font-size: calc(16 / 16 * 1rem);
-            /* 46px - 56px */
-            line-height: clamp(2.875em, 5.5vw, 3.5em);
-            font-weight: 700;
-            color: #fff;
+            button {
+                border-radius: 30px;
+                font-family: 'League Gothic', sans-serif;
+                text-transform: uppercase;
+                color: #fff;
+                background-color: transparent;
+                border: none;
 
-            .cs-img {
-                display: block;
-                margin-right: calc(12 / 16 * 1rem);
-            }
-
-            &:before {
-                z-index: -1;
-                position: absolute;
-                /* so it sits on top of the border */
-                top: -1px;
-                bottom: -1px;
-                left: -1px;
-                right: -1px;
-                content: "";
-                opacity: 1;
-                /* this is what creates the grow affect on hover */
-                transform: scaleX(0);
-                display: block;
-                background: #000;
-                transition: transform 0.3s;
-                transform-origin: left;
-            }
-
-            &:hover {
-                &:before {
-                    transform: scaleX(1);
+                &:nth-child(1) {
+                    background-image: linear-gradient(to right, #81baa0, #46a39c);
                 }
+
+                &:nth-child(2) {
+                    border: 2px solid transparent;
+                    background: linear-gradient(#242745, #242745) padding-box,
+                    linear-gradient(to right, #81baa0, #46a39c) border-box;
+                }
+            }
+        }
+
+        .arrows {
+            width: min(1200px, 90vw);
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -25px);
+            pointer-events: none;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                break-before: 50%;
+                border: 1px solid #659cdf55;
+                background-color: #232442;
+                color: #fff7;
+                font-size: large;
+                font-family: monospace;
+                pointer-events: auto;
+                transition: 0.5s;
+
+                &:hover {
+                    border: 1px solid #659cdf;
+                    color: #fff;
+                }
+            }
+        }
+
+        .indicators {
+            position: absolute;
+            top: 78.5%;
+            height: var(--w-column);
+            width: min(1200px, 90vw);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            pointer-events: none;
+            justify-content: end;
+            gap: 10px;
+        }
+
+        .number {
+            font-family: 'League Gothic', sans-serif;
+            font-size: 6vw;
+        }
+
+        ul {
+            display: flex;
+            gap: 10px;
+
+            li {
+                width: 50px;
+                height: 5px;
+                background-color: #659cdf;
+                border-radius: 10px;
+                pointer-events: auto;
+                cursor: pointer;
+                list-style: none;
+                transition: 0.5s;
+
+                &:hover {
+                    background-image: none;
+                    background-color: yellow;
+                }
+            }
+
+            .active {
+                background-color: yellow;
             }
         }
     }
