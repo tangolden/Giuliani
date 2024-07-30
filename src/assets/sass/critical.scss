@@ -8,6 +8,7 @@
 @media only screen and (min-width: 0rem) {
     :root {
         --w-column: 100px;
+        --calculation: 1;
     }
 
     #hero {
@@ -49,6 +50,9 @@
         .item {
             position: absolute;
             inset: 0;
+            transition: 0.5s;
+            transform: translateX(calc(100vw * var(--calculation)));
+            opacity: 0;
         }
 
         .cs-picture {
@@ -61,7 +65,9 @@
                 width: 90%;
                 height: 90%;
                 object-fit: cover;
-                transform: rotate(-25deg);
+                transform: rotate(0deg);
+                transition: 0.5s;
+                transition-delay: 0.3s;
             }
 
             &::before {
@@ -88,6 +94,10 @@
             justify-content: center;
             align-items: end;
             gap: 20px;
+            transform: translateX(calc(200px * var(--calculation)));
+            transition: 0.7s;
+            opacity: 0;
+            transition-delay: 0.3s;
         }
 
         .cs-topper {
@@ -102,6 +112,7 @@
             text-transform: uppercase;
             font-size: 8.3em;
             line-height: 1em;
+            transition-delay: 0.5s;
         }
 
         .cs-text {
@@ -109,6 +120,7 @@
             text-align: right;
             max-width: 400px;
             font-size: small;
+            transition-delay: 0.7s;
         }
 
         .more {
@@ -116,6 +128,7 @@
             grid-template-columns: repeat(2, 120px);
             gap: 20px;
             grid-template-rows: 35px;
+            transition-delay: 0.9s;
         
 
             button {
@@ -211,6 +224,23 @@
             .active {
                 background-color: yellow;
             }
+        }
+
+        .active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 999;
+
+            .cs-picture {
+                img {
+                    transform: rotate(-25deg);
+                }
+            }
+        }
+
+        .content {
+            transform: translateX(0);
+            opacity: 1;
         }
     }
 }

@@ -42,7 +42,7 @@ eleventyNavigation:
 
     <section id="hero">
         <div class="cs-container">
-            <div class="item itemOne">
+            <div class="item active">
                 <picture class="cs-picture">
                     <source media="(max-width: 600px)" srcset="/assets/images/black-loafers.png">
                     <source media="(min-width: 601px)" srcset="/assets/images/black-loafers.png">
@@ -67,7 +67,7 @@ eleventyNavigation:
                     <img aria-hidden="true" decoding="async" src="/assets/images/blue-loafers.png" alt="new home" width="2500" height="1667" loading="eager">
                 </picture>
                 <div class="content">
-                    <span class="cs-topper">Midnight Blue</span>
+                    <span class="cs-topper">Midnight</span>
                     <h2 class="cs-title">Blue Royale</h2>
                     <p class="cs-text">
                         Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nibh tortor id aliquet lectus proin nibh condimentum.
@@ -85,7 +85,7 @@ eleventyNavigation:
                     <img aria-hidden="true" decoding="async" src="/assets/images/red-loafers.png" alt="new home" width="2500" height="1667" loading="eager">
                 </picture>
                 <div class="content">
-                    <span class="cs-topper">Scarlet Prestige</span>
+                    <span class="cs-topper">Cardinal</span>
                     <h2 class="cs-title">Scarlet Noble</h2>
                     <p class="cs-text">
                         Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nibh tortor id aliquet lectus proin nibh condimentum.
@@ -385,6 +385,49 @@ eleventyNavigation:
             <a aria-label="read more reviews" href="/reviews" class="cs-button-solid">Our Reviews</a>
         </div>
     </section>
+
+    <script>
+        let prevBtn = document.getElementById('prev');
+        let nextBtn = document.getElementById('next');
+        let carousel = document.getElementById('hero');
+        let items = carousel.querySelectorAll('.cs-container .item');
+        let indicator = carousel.querySelector('.indicators');
+        let dots = indicator.querySelectorAll('ul li');
+        let active = 2;
+        let firstPosition = 0;
+        let lastPosition = items.length - 1;
+
+        let setSlider = () => {
+            let itemActiveOld = carousel.querySelector('.cs-container .item.active');
+            if (itemActiveOld) {
+                itemActiveOld.classList.remove('active');
+            }
+            items[active].classList.add('active');
+
+            let dotActiveOld = indicator.querySelector('li.active');
+            if (dotActiveOld) {
+                dotActiveOld.classList.remove('active');
+            }
+            dots[active].classList.add('active');
+            indicator.querySelector('.number').innerText = '0' + (active + 1);
+        }
+
+        // Add event listeners for buttons (if necessary)
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                active = (active === firstPosition) ? lastPosition : active - 1;
+                setSlider();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                active = (active === lastPosition) ? firstPosition : active + 1;
+                setSlider();
+            });
+        }
+    </script>
+
+
+
 
     {% include 'components/cta.html' %}
 {% endblock %}
