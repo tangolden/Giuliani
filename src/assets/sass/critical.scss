@@ -7,7 +7,7 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     :root {
-        --w-column: 100px;
+        --w-column: 50px;
         --calculation: 1;
     }
 
@@ -17,6 +17,7 @@
         overflow: hidden;
         background-image: radial-gradient(#2b2e4f, #111126);
         height: 100vh;
+        padding-bottom: 100px;
 
         .cs-container {
             position: relative;
@@ -57,9 +58,10 @@
 
         .cs-picture {
             position: absolute;
-            width: 70%;
-            top: 50%;
-            transform: translateY(-50%);
+            width: 110%;
+            top: 100px;
+            transform: translateY(0%);
+            left: -30px;
 
             img {
                 width: 90%;
@@ -85,15 +87,14 @@
 
         .content {
             position: absolute;
-            z-index: 999;
             width: 70%;
             height: 100%;
+            top: 80px;
             right: var(--w-column);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: end;
             align-items: end;
-            gap: 20px;
             transform: translateX(calc(200px * var(--calculation)));
             transition: 0.7s;
             opacity: 0;
@@ -110,7 +111,7 @@
             font-family: 'League Gothic';
             color: var(--bodyTextColor);
             text-transform: uppercase;
-            font-size: 8.3em;
+            font-size: 3.2em;
             line-height: 1em;
             transition-delay: 0.5s;
         }
@@ -184,7 +185,7 @@
 
         .indicators {
             position: absolute;
-            top: 78.5%;
+            top: 83.5%;
             height: var(--w-column);
             width: min(1200px, 90vw);
             left: 50%;
@@ -194,6 +195,7 @@
             pointer-events: none;
             justify-content: end;
             gap: 10px;
+            z-index: 1;
         }
 
         .number {
@@ -214,11 +216,6 @@
                 cursor: pointer;
                 list-style: none;
                 transition: 0.5s;
-
-                &:hover {
-                    background-image: none;
-                    background-color: yellow;
-                }
             }
 
             .active {
@@ -229,7 +226,7 @@
         .active {
             opacity: 1;
             transform: translateX(0);
-            z-index: 999;
+            z-index: 1;
 
             .cs-picture {
                 img {
@@ -245,4 +242,54 @@
     }
 }
 
+/* Tablet */
+@media only screen and (min-width: 48rem) {
+    :root {
+        --w-column: 100px;
+    }
+
+    #hero {
+        height: 80vh;
+
+        .cs-text {
+            max-width: 200px;
+        }
+
+        .content {
+            justify-content: center;
+            padding-bottom: 0;
+        }
+
+        .cs-picture {
+            width: 70%;
+            transform: translateY(-50%);
+            top: 50%;
+            left: 0;
+        }
+
+        .indicators {
+            top: 69%;
+        }
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 64rem) {
+    #hero {
+        height: 100vh;
+
+        .cs-title {
+            font-size: 8.3em;
+        }
+
+        .cs-text {
+            max-width: 400px;
+        }
+
+        .indicators {
+            top: 83.5%;
+        }
+
+    }
+}
 

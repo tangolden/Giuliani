@@ -397,6 +397,9 @@ eleventyNavigation:
         let firstPosition = 0;
         let lastPosition = items.length - 1;
 
+        let autoplayInterval;
+
+        // Function to set the active slide and dot
         let setSlider = () => {
             let itemActiveOld = carousel.querySelector('.cs-container .item.active');
             if (itemActiveOld) {
@@ -412,19 +415,43 @@ eleventyNavigation:
             indicator.querySelector('.number').innerText = '0' + (active + 1);
         }
 
-        // Add event listeners for buttons (if necessary)
+        // Function to reset the autoplay interval
+        let resetAutoplay = () => {
+            clearInterval(autoplayInterval);
+            autoplayInterval = setInterval(() => {
+                active = (active === lastPosition) ? firstPosition : active + 1;
+                setSlider();
+            }, 5000); // Autoplay interval of 5 seconds
+        }
+
+        // Event listeners for prev and next buttons
         if (prevBtn && nextBtn) {
             prevBtn.addEventListener('click', () => {
                 active = (active === firstPosition) ? lastPosition : active - 1;
                 setSlider();
+                resetAutoplay();
             });
 
             nextBtn.addEventListener('click', () => {
                 active = (active === lastPosition) ? firstPosition : active + 1;
                 setSlider();
+                resetAutoplay();
             });
         }
+
+        // Event listeners for dots
+        dots.forEach((item, position) => {
+            item.onclick = () => {
+                active = position;
+                setSlider();
+                resetAutoplay();
+            }
+        })
+
+        // Start the autoplay initially
+        resetAutoplay();
     </script>
+
 
 
 
