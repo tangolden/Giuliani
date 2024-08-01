@@ -79,12 +79,12 @@
     position: absolute;
     width: 70%;
     height: 100%;
-    top: 80px;
     right: var(--w-column);
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: end;
+    gap: 20px;
     transform: translateX(calc(200px * var(--calculation)));
     transition: 0.7s;
     opacity: 0;
