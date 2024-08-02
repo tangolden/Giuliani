@@ -42,33 +42,73 @@ eleventyNavigation:
 
     <section id="hero">
         <div class="cs-container">
-            <div class="cs-flex-group">
-                <span class="cs-topper">mountain hiking society</span>
-                <h1 class="cs-title">Explore the World with Exciting People</h1>
-                <p class="cs-text">
-                    Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nibh tortor id aliquet lectus proin nibh condimentum.
-                </p>
-                <a href="/about" class="cs-button-solid">Explore More</a>
-                <a href="/contact" class="cs-button-transparent">
-                    <img
-                    class="cs-img"
-                    loading="lazy"
-                    decoding="async"
-                    src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
-                    alt="play icon"
-                    width="17"
-                    height="17"/>
-                    Get in Touch
-                </a>
+            <div class="item active">
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/black-loafers.png">
+                    <source media="(min-width: 601px)" srcset="/assets/images/black-loafers.png">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/black-loafers.png" alt="new home" width="2500" height="1667" loading="eager">
+                </picture>
+                <div class="content">
+                    <span class="cs-topper">Classics</span>
+                    <h2 class="cs-title">Noir Classic</h2>
+                    <p class="cs-text">
+                        The Noir Claas Loafer is designed to make a lasting impression, offering unparalleled comfort and timeless appeal
+                    </p>
+                    <div class="more">
+                        <button>Add To Cart</button>
+                        <button>See More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/blue-loafers.png">
+                    <source media="(min-width: 601px)" srcset="/assets/images/blue-loafers.png">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/blue-loafers.png" alt="new home" width="2500" height="1667" loading="eager">
+                </picture>
+                <div class="content">
+                    <span class="cs-topper">Midnight</span>
+                    <h2 class="cs-title">Blue Royale</h2>
+                    <p class="cs-text">
+                        Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius.
+                    </p>
+                    <div class="more">
+                        <button>Add To Cart</button>
+                        <button>See More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/red-loafers.png">
+                    <source media="(min-width: 601px)" srcset="/assets/images/red-loafers.png">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/red-loafers.png" alt="new home" width="2500" height="1667" loading="eager">
+                </picture>
+                <div class="content">
+                    <span class="cs-topper">Cardinal</span>
+                    <h2 class="cs-title">Scarlet Noble</h2>
+                    <p class="cs-text">
+                        Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius.
+                    </p>
+                    <div class="more">
+                        <button>Add To Cart</button>
+                        <button>See More</button>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Background Image -->
-        <picture class="cs-picture">
-            <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp">
-            <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/landing.jpg" alt="new home" width="2500" height="1667" loading="eager">
-        </picture>
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <div class="indicators">
+            <div class="number">01</div>
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
     </section>
 
     <!-- ============================================ -->
@@ -345,6 +385,76 @@ eleventyNavigation:
             <a aria-label="read more reviews" href="/reviews" class="cs-button-solid">Our Reviews</a>
         </div>
     </section>
+
+    <script>
+        let prevBtn = document.getElementById('prev');
+        let nextBtn = document.getElementById('next');
+        let carousel = document.getElementById('hero');
+        let items = carousel.querySelectorAll('.cs-container .item');
+        let indicator = carousel.querySelector('.indicators');
+        let dots = indicator.querySelectorAll('ul li');
+        let active = 0;
+        let firstPosition = 0;
+        let lastPosition = items.length - 1;
+
+        let autoplayInterval;
+
+        // Function to set the active slide and dot
+        let setSlider = () => {
+            let itemActiveOld = carousel.querySelector('.cs-container .item.active');
+            if (itemActiveOld) {
+                itemActiveOld.classList.remove('active');
+            }
+            items[active].classList.add('active');
+
+            let dotActiveOld = indicator.querySelector('li.active');
+            if (dotActiveOld) {
+                dotActiveOld.classList.remove('active');
+            }
+            dots[active].classList.add('active');
+            indicator.querySelector('.number').innerText = '0' + (active + 1);
+        }
+
+        // Function to reset the autoplay interval
+        let resetAutoplay = () => {
+            clearInterval(autoplayInterval);
+            autoplayInterval = setInterval(() => {
+                active = (active === lastPosition) ? firstPosition : active + 1;
+                setSlider();
+            }, 5000); // Autoplay interval of 5 seconds
+        }
+
+        // Event listeners for prev and next buttons
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                active = (active === firstPosition) ? lastPosition : active - 1;
+                setSlider();
+                resetAutoplay();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                active = (active === lastPosition) ? firstPosition : active + 1;
+                setSlider();
+                resetAutoplay();
+            });
+        }
+
+        // Event listeners for dots
+        dots.forEach((item, position) => {
+            item.onclick = () => {
+                active = position;
+                setSlider();
+                resetAutoplay();
+            }
+        })
+
+        // Start the autoplay initially
+        resetAutoplay();
+    </script>
+
+
+
+
 
     {% include 'components/cta.html' %}
 {% endblock %}
