@@ -100,7 +100,7 @@
     font-family: "League Gothic";
     color: var(--bodyTextColor);
     text-transform: uppercase;
-    font-size: clamp(3.5em, 9vw, 8.3em);
+    font-size: clamp(3.5em, 10vw, 8.3em);
     line-height: 1em;
     transition-delay: 0.5s;
     margin: 0;
@@ -164,7 +164,7 @@
   }
   #hero .indicators {
     position: absolute;
-    top: clamp(63%, 48vw, 83.5%);
+    top: clamp(63%, 54vw, 88.5%);
     height: var(--w-column);
     width: min(1200px, 90vw);
     left: 50%;
@@ -178,7 +178,7 @@
   }
   #hero .number {
     font-family: "League Gothic", sans-serif;
-    font-size: 6vw;
+    font-size: 5.7vw;
   }
   #hero ul {
     display: flex;
@@ -213,7 +213,7 @@
 /* Tablet */
 @media only screen and (min-width: 48rem) {
   :root {
-    --w-column: 100px;
+    --w-column: 60px;
   }
   #hero {
     height: 60vh;
