@@ -141,10 +141,8 @@
     height: 200px; /* Sets height to 200px */
     width: 100%; /* Full width of the containing block */
     top: 52%;
-    border-bottom: 1px solid #324073;
-  }
-  #RTsbs-459 .hor-line {
     border-top: 1px solid #324073;
+    border-bottom: 1px solid #324073;
   }
   #RTsbs-459 .arrows {
     position: relative;
