@@ -164,7 +164,6 @@
   }
   #hero .indicators {
     position: absolute;
-    top: clamp(63%, 54vw, 88.5%);
     height: var(--w-column);
     width: min(1200px, 90vw);
     left: 50%;
@@ -233,11 +232,17 @@
     top: 50%;
     left: 0;
   }
+  #hero .indicators {
+    top: 80%;
+  }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #hero {
     height: 100vh;
+  }
+  #hero .indicators {
+    top: 88.5%;
   }
 }
 
