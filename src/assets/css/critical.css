@@ -1,151 +1,159 @@
-/* STYLES FOR ABOVE THE FOLD */
 /*-- -------------------------- -->
-<---           Hero             -->
+<---       Side By Side         -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  :root {
-    --w-column: 50px;
-    --calculation: 1;
-  }
-  #hero {
-    position: relative;
-    /* prevents overflow from the lines extending past the screen width */
-    overflow: hidden;
+  #RTsbs-459 {
+    padding: var(--sectionPadding);
     background-image: radial-gradient(#2b2e4f, #111126);
-    height: 100vh;
   }
-  #hero .cs-container {
-    position: relative;
-    margin: auto;
-    width: min(1200px, 90vw);
-    height: 100%;
-  }
-  #hero .cs-container::before {
-    content: "";
-    position: absolute;
-    height: var(--w-column);
+  #RTsbs-459 .cs-container {
     width: 100%;
-    border-top: 1px solid #324073;
-    border-bottom: 1px solid #324073;
-    top: 52%;
-    pointer-events: none;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
   }
-  #hero .cs-container::after {
+  #RTsbs-459 .cs-container::after {
     content: "";
     position: absolute;
-    right: var(--w-column);
-    width: var(--w-column);
+    right: 200px;
+    width: 200px;
     height: 100%;
     border-left: 1px solid #324073;
     border-right: 1px solid #324073;
     pointer-events: none;
   }
-  #hero .item {
-    position: absolute;
-    inset: 0;
-    transition: 0.5s;
-    transform: translateX(calc(100vw * var(--calculation)));
-    opacity: 0;
-  }
-  #hero .cs-picture {
-    position: absolute;
-    width: 115%;
-    transform: translateY(0);
-    left: -3%;
-    top: 3%;
-  }
-  #hero .cs-picture img {
-    width: 90%;
-    height: 90%;
-    object-fit: cover;
-    transform: rotate(0deg);
-    transition: 0.5s;
-    transition-delay: 0.3s;
-  }
-  #hero .cs-picture::before {
-    content: "";
-    position: absolute;
-    background-color: #0b0b0b;
-    width: 100%;
-    height: 100px;
-    top: 90%;
-    left: 50px;
-    filter: blur(50px);
-    border-radius: 50%;
-  }
-  #hero .content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    right: var(--w-column);
+  #RTsbs-459 .cs-content {
+    text-align: right;
+    width: auto;
+    max-width: 40.625rem;
+    margin: 0 1rem;
+    margin-top: -18.75rem;
+    padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1.25rem, 5.5vw, 3.75rem);
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: end;
-    gap: 20px;
-    transform: translateX(calc(200px * var(--calculation)));
-    transition: 0.7s;
-    opacity: 0;
-    transition-delay: 0.3s;
-    padding-bottom: 75px;
-    top: 5%;
+    align-items: flex-end;
+    position: relative;
+    z-index: 10;
   }
-  #hero .cs-topper {
+  #RTsbs-459 .cs-topper {
+    text-transform: none;
     font-weight: 500;
-    color: var(--primary);
-    margin: 0;
+    margin-top: 1rem;
   }
-  #hero .cs-title {
-    font-family: "League Gothic";
-    color: var(--bodyTextColor);
-    text-transform: uppercase;
-    font-size: clamp(3.5em, 10vw, 8.3em);
-    line-height: 1em;
-    transition-delay: 0.5s;
-    margin: 0;
+  #RTsbs-459 .cs-text {
+    margin-bottom: 1rem;
+    font-size: 0.86rem;
+    max-width: 25rem;
   }
-  #hero .cs-text {
-    color: var(--bodyTextColorWhite);
-    text-align: right;
-    max-width: 55%;
-    font-size: small;
-    transition-delay: 0.7s;
-  }
-  #hero .more {
-    display: grid;
-    grid-template-columns: repeat(2, 120px);
-    gap: 20px;
-    grid-template-rows: 35px;
-    transition-delay: 0.9s;
-  }
-  #hero .more button {
-    border-radius: 30px;
-    font-family: "League Gothic", sans-serif;
+  #RTsbs-459 .cs-title {
     text-transform: uppercase;
     color: #fff;
+    font-family: "League Gothic", sans-serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+  }
+  #RTsbs-459 .text-buttons {
+    display: flex;
+    gap: 1.25rem;
+  }
+  #RTsbs-459 .cs-button-solid {
+    font-size: 0.86rem;
+    font-family: "League Gothic", sans-serif;
+    /* 46px - 56px */
+    line-height: 2.5rem;
+    text-decoration: none;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0;
     background-color: transparent;
     border: none;
+    border-radius: 1.875rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
   }
-  #hero .more button:nth-child(1) {
+  #RTsbs-459 .cs-button-solid:nth-child(1) {
     background-image: linear-gradient(to right, #81baa0, #46a39c);
   }
-  #hero .more button:nth-child(2) {
+  #RTsbs-459 .cs-button-solid:nth-child(2) {
     border: 2px solid transparent;
     background: linear-gradient(#242745, #242745) padding-box, linear-gradient(to right, #81baa0, #46a39c) border-box;
   }
-  #hero .arrows {
-    width: min(1200px, 90vw);
+  #RTsbs-459 .cs-button-solid:before {
+    content: "";
     position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #659cdf;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 1.875rem;
+    transition: width 0.3s;
+  }
+  #RTsbs-459 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #RTsbs-459 .cs-picture {
+    width: 100%;
+    height: auto;
+    height: 27.6875rem;
+    display: block;
+    /* sends it to the top */
+    order: -1;
+    position: relative;
+    z-index: 1;
+  }
+  #RTsbs-459 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: rotate(-25deg);
+  }
+  #RTsbs-459 .cs-picture::before {
+    content: "";
+    position: absolute;
+    background-color: #0b0b0b;
+    width: 95%;
+    height: 30px;
+    top: 103%;
+    left: 11%;
+    filter: blur(25px);
+    border-radius: 30%;
+  }
+  #RTsbs-459 .more {
+    position: absolute;
+    height: 200px; /* Sets height to 200px */
+    width: 100%; /* Full width of the containing block */
     top: 52%;
-    left: 50%;
-    transform: translate(-50%, -25px);
-    pointer-events: none;
-    z-index: 1000;
+    border-bottom: 1px solid #324073;
+  }
+  #RTsbs-459 .hor-line {
+    border-top: 1px solid #324073;
+  }
+  #RTsbs-459 .arrows {
+    position: relative;
+    top: -26px;
     display: flex;
     justify-content: space-between;
+    z-index: 999;
   }
-  #hero .arrows button {
+  #RTsbs-459 .arrows button {
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -158,14 +166,15 @@
     pointer-events: auto;
     transition: 0.5s;
   }
-  #hero .arrows button:hover {
+  #RTsbs-459 .arrows button:hover {
     border: 1px solid #659cdf;
     color: #fff;
   }
-  #hero .indicators {
+  #RTsbs-459 .indicators {
     position: absolute;
-    height: var(--w-column);
-    width: min(1200px, 90vw);
+    height: 300px; /* Sets height to 200px */
+    width: 100%; /* Full width of the containing block */
+    top: 52%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -175,15 +184,15 @@
     gap: 10px;
     z-index: 1;
   }
-  #hero .number {
+  #RTsbs-459 .number {
     font-family: "League Gothic", sans-serif;
     font-size: 5.7vw;
   }
-  #hero ul {
+  #RTsbs-459 ul {
     display: flex;
     gap: 10px;
   }
-  #hero ul li {
+  #RTsbs-459 ul li {
     width: 50px;
     height: 5px;
     background-color: #659cdf;
@@ -193,56 +202,43 @@
     list-style: none;
     transition: 0.5s;
   }
-  #hero ul .active {
+  #RTsbs-459 ul .active {
     background-color: yellow;
   }
-  #hero .active {
-    opacity: 1;
-    transform: translateX(0);
-    z-index: 1;
-  }
-  #hero .active .cs-picture img {
-    transform: rotate(-25deg);
-  }
-  #hero .content {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
-/* Tablet */
+/* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  :root {
-    --w-column: 60px;
-  }
-  #hero {
-    height: 60vh;
-  }
-  #hero .content {
-    width: 70%;
+  #RTsbs-459 .cs-container,
+  #RTsbsr-459 .cs-container,
+  #RTsbst-459 .cs-container {
+    padding: 3.75rem 0;
+    position: relative;
+    align-items: flex-end;
     justify-content: center;
-    padding-bottom: 0;
-    top: 0;
   }
-  #hero .cs-text {
-    max-width: 50%;
+  #RTsbs-459 .cs-content,
+  #RTsbsr-459 .cs-content,
+  #RTsbst-459 .cs-content {
+    width: 65%;
+    margin: 0;
   }
-  #hero .cs-picture {
-    width: 70%;
-    transform: translateY(-50%);
-    top: 50%;
+  #RTsbs-459 .cs-picture,
+  #RTsbsr-459 .cs-picture,
+  #RTsbst-459 .cs-picture {
+    /* 465px - 617px */
+    width: clamp(29.0625rem, 53vw, 58.5625rem);
+    position: absolute;
     left: 0;
-  }
-  #hero .indicators {
-    top: 80%;
+    height: 100%;
   }
 }
-/* Desktop - 1024px */
+/* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #hero {
-    height: 100vh;
-  }
-  #hero .indicators {
-    top: 88.5%;
+  #RTsbs-459 .cs-content,
+  #RTsbsr-459 .cs-content,
+  #RTsbst-459 .cs-content {
+    /* 90px - 108px */
+    margin-right: clamp(5rem, 8.5vw, 6.75rem);
   }
 }
 

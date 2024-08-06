@@ -1,45 +1,28 @@
-/* STYLES FOR ABOVE THE FOLD */
-
 /*-- -------------------------- -->
-<---           Hero             -->
+<---       Side By Side         -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    :root {
-        --w-column: 50px;
-        --calculation: 1;
-    }
-
-    #hero {
-        position: relative;
-        /* prevents overflow from the lines extending past the screen width */
-        overflow: hidden;
+    #RTsbs-459 {
+        padding: var(--sectionPadding);
         background-image: radial-gradient(#2b2e4f, #111126);
-        height: 100vh;
+
 
         .cs-container {
-            position: relative;
+            width: 100%;
+            max-width: calc(1280 / 16 * 1rem);
             margin: auto;
-            width: min(1200px, 90vw);
-            height: 100%;
-
-            &::before {
-                content: '';
-                position: absolute;
-                height: var(--w-column);
-                width: 100%;
-                border-top: 1px solid #324073;
-                border-bottom: 1px solid #324073;
-                top: 52%;
-                pointer-events: none;
-            } 
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: center;
 
             &::after {
                 content: '';
                 position: absolute;
-                right: var(--w-column);
-                width: var(--w-column);
+                right: 200px;
+                width: 200px;
                 height: 100%;
                 border-left: 1px solid #324073;
                 border-right: 1px solid #324073;
@@ -47,123 +30,152 @@
             }  
         }
 
-        .item {
-            position: absolute;
-            inset: 0;
-            transition: 0.5s;
-            transform: translateX(calc(100vw * var(--calculation)));
-            opacity: 0;
+        .cs-content {
+            text-align: right;
+            width: auto;
+            max-width: calc(650 / 16 * 1rem);
+            margin: 0 calc(16 / 16 * 1rem);
+            margin-top: calc(-300 / 16 * 1rem);
+            padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1.25rem, 5.5vw, 3.75rem);
+            box-sizing: border-box;
+            border-radius: calc(12 / 16 * 1rem);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
+            z-index: 10;
+        }
+        
+        
+
+        .cs-topper {
+            text-transform: none;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        .cs-text {
+            margin-bottom: 1rem;
+            font-size: 0.86rem;
+            max-width: 25rem;
+        }
+
+        .cs-title {
+            text-transform: uppercase;
+            color: #fff;
+            font-family: 'League Gothic', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 8rem);
+        }
+        
+        .text-buttons {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .cs-button-solid {
+            font-size: 0.86rem;
+            font-family: 'League Gothic', sans-serif;
+            /* 46px - 56px */
+            line-height: 2.5rem;
+            text-decoration: none;
+            font-weight: 400;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: calc(150 / 16 * 1rem);
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            border-radius: 1.875rem;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:nth-child(1) {
+                background-image: linear-gradient(to right, #81baa0, #46a39c);
+            }
+
+            &:nth-child(2) {
+                border: 2px solid transparent;
+                background: linear-gradient(#242745, #242745) padding-box,
+                linear-gradient(to right, #81baa0, #46a39c) border-box;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #659cdf;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: 1.875rem;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
         }
 
         .cs-picture {
-            position: absolute;
-            width: 115%;
-            transform: translateY(0);
-            left: -3%;
-            top: 3%;
+            width: 100%;
+            height: auto;
+            height: calc(443 / 16 * 1rem);
+            display: block;
+            /* sends it to the top */
+            order: -1;
+            position: relative;
+            z-index: 1;
 
             img {
-                width: 90%;
-                height: 90%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
                 object-fit: cover;
-                transform: rotate(0deg);
-                transition: 0.5s;
-                transition-delay: 0.3s;
+                transform: rotate(-25deg);
             }
 
             &::before {
                 content: '';
                 position: absolute;
                 background-color: #0b0b0b;
-                width: 100%;
-                height: 100px;
-                top: 90%;
-                left: 50px;
-                filter: blur(50px);
-                border-radius: 50%;
+                width: 95%;
+                height: 30px;
+                top: 103%;
+                left: 11%;
+                filter: blur(25px);
+                border-radius: 30%;
             }
-        }
-
-        .content {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            right: var(--w-column);
-            display: flex;
-            flex-direction: column;
-            justify-content: end;
-            align-items: end;
-            gap: 20px;
-            transform: translateX(calc(200px * var(--calculation)));
-            transition: 0.7s;
-            opacity: 0;
-            transition-delay: 0.3s;
-            padding-bottom: 75px;
-            top: 5%;
-        }
-
-        .cs-topper {
-            font-weight: 500;
-            color: var(--primary);
-            margin: 0;
-        }
-
-        .cs-title {
-            font-family: 'League Gothic';
-            color: var(--bodyTextColor);
-            text-transform: uppercase;
-            font-size: clamp(3.5em, 10vw, 8.3em);
-            line-height: 1em;
-            transition-delay: 0.5s;
-            margin: 0;
-        }
-
-        .cs-text {
-            color: var(--bodyTextColorWhite);
-            text-align: right;
-            max-width: 55%;
-            font-size: small;
-            transition-delay: 0.7s;
         }
 
         .more {
-            display: grid;
-            grid-template-columns: repeat(2, 120px);
-            gap: 20px;
-            grid-template-rows: 35px;
-            transition-delay: 0.9s;
-        
+            position: absolute;
+            height: 200px; /* Sets height to 200px */
+            width: 100%; /* Full width of the containing block */
+            top: 52%;
+            border-bottom: 1px solid #324073;
+        }
 
-            button {
-                border-radius: 30px;
-                font-family: 'League Gothic', sans-serif;
-                text-transform: uppercase;
-                color: #fff;
-                background-color: transparent;
-                border: none;
-
-                &:nth-child(1) {
-                    background-image: linear-gradient(to right, #81baa0, #46a39c);
-                }
-
-                &:nth-child(2) {
-                    border: 2px solid transparent;
-                    background: linear-gradient(#242745, #242745) padding-box,
-                    linear-gradient(to right, #81baa0, #46a39c) border-box;
-                }
-            }
+        .hor-line {
+            border-top: 1px solid #324073;
         }
 
         .arrows {
-            width: min(1200px, 90vw);
-            position: absolute;
-            top: 52%;
-            left: 50%;
-            transform: translate(-50%, -25px);
-            pointer-events: none;
-            z-index: 1000;
+            position: relative;
+            top: -26px;
             display: flex;
             justify-content: space-between;
+            z-index: 999;
 
             button {
                 border-radius: 50%;
@@ -187,8 +199,9 @@
 
         .indicators {
             position: absolute;
-            height: var(--w-column);
-            width: min(1200px, 90vw);
+            height: 300px; /* Sets height to 200px */
+            width: 100%; /* Full width of the containing block */
+            top: 52%;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -223,67 +236,45 @@
                 background-color: yellow;
             }
         }
-
-        .active {
-            opacity: 1;
-            transform: translateX(0);
-            z-index: 1;
-
-            .cs-picture {
-                img {
-                    transform: rotate(-25deg);
-                }
-            }
-        }
-
-        .content {
-            transform: translateX(0);
-            opacity: 1;
-        }
     }
 }
 
-/* Tablet */
+/* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    :root {
-        --w-column: 60px;
-    }
-
-    #hero {
-        height: 60vh;
-
-        .content {
-            width: 70%;
+    #RTsbs-459,
+    #RTsbsr-459,
+    #RTsbst-459 {
+        .cs-container {
+            padding: calc(60 / 16 * 1rem) 0;
+            position: relative;
+            align-items: flex-end;
             justify-content: center;
-            padding-bottom: 0;
-            top: 0;
         }
 
-        .cs-text {
-            max-width: 50%;
+        .cs-content {
+            width: 65%;
+            margin: 0;
         }
 
         .cs-picture {
-            width: 70%;
-            transform: translateY(-50%);
-            top: 50%;
+            /* 465px - 617px */
+            width: clamp(29.0625rem, 53vw, 58.5625rem);
+            position: absolute;
             left: 0;
-        }
-
-        .indicators {
-            top: 80%;
+            height: 100%;
         }
     }
 }
 
-/* Desktop - 1024px */
+/* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #hero {
-        height: 100vh;
-        
-        .indicators {
-            top: 88.5%;
+    #RTsbs-459,
+    #RTsbsr-459,
+    #RTsbst-459 {
+        .cs-content {
+            /* 90px - 108px */
+            margin-right: clamp(5rem, 8.5vw, 6.75rem);
         }
     }
 }
-
+                                
