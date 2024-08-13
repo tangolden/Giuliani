@@ -1052,7 +1052,7 @@
 /* Mobile */
 @media only screen and (min-width: 0rem) {
   #footer {
-    background: #1c1c1c;
+    background: #0b0c0c;
     padding: 5.25rem 0 1.25rem;
     font-size: min(4vw, 1.2em);
   }
