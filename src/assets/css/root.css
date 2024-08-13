@@ -982,10 +982,6 @@
     position: relative;
     z-index: 1;
   }
-  #cta-1394 .cs-button-solid {
-    background: transparent;
-    border: 2px solid #81baa0;
-  }
   #cta-1394 .cs-input {
     font-size: 1rem;
     width: 100%;
