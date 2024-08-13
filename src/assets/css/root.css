@@ -9,9 +9,8 @@
     --primaryLight: #ffd675;
     --secondary: #001f3f;
     --secondaryLight: #001f3f;
-    --headerColor: #1a1a1a;
-    --bodyTextColor: #fff;
-    --bodyTextColorWhite: #fafbfc;
+    --headerColor: #fff;
+    --bodyTextColor: #fafbfc;
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
@@ -23,7 +22,6 @@
   .cs-topper {
     display: block;
     margin-bottom: 0.25rem;
-    text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: var(--topperFontSize);
     line-height: 1.2em;
@@ -32,13 +30,14 @@
     text-align: inherit;
   }
   .cs-title {
+    text-transform: uppercase;
+    color: var(--headerColor);
+    font-family: "League Gothic", sans-serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
     position: relative;
     margin: 0 0 1rem 0;
     max-width: 43.75rem;
-    font-size: var(--headerFontSize);
     line-height: 1.2em;
-    font-weight: 900;
-    color: var(--headerColor);
     text-align: inherit;
   }
   .cs-text {
@@ -51,24 +50,34 @@
     text-align: inherit;
   }
   .cs-button-solid {
-    z-index: 1;
-    position: relative;
-    display: inline-block;
-    background-color: var(--primary);
-    width: auto;
-    padding: 0 1.875rem;
+    font-size: 1.25rem;
+    font-family: "League Gothic", sans-serif;
+    /* 46px - 56px */
+    line-height: 2.5rem;
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1rem;
-    line-height: 3.125em;
-    font-weight: bold;
-    color: #000;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 1.875rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    background: linear-gradient(#242745, #242745) padding-box, linear-gradient(to right, #81baa0, #46a39c) border-box;
     transition: color 0.3s;
     transition-delay: 0.1s;
     text-align: center;
   }
   .cs-button-solid:hover {
-    color: #fff;
+    color: #000;
+    background: 0;
   }
   .cs-button-solid:hover:before {
     width: 100%;
@@ -81,8 +90,9 @@
     content: "";
     opacity: 1;
     display: block;
-    background-color: #000;
+    background-color: var(--primary);
     height: 100%;
+    border-radius: 1.875rem;
     width: 0;
     transition: width 0.3s;
   }
@@ -109,7 +119,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 100%;
     color: var(--bodyTextColor);
-    background-color: #0E0F0F;
+    background-image: radial-gradient(#2b2e4f, #111126);
   }
   *,
   *:before,
@@ -134,6 +144,7 @@
   h6 {
     margin: 0;
     color: var(--headerColor);
+    font-family: "League Gothic", sans-serif;
   }
   p,
   li,
@@ -276,7 +287,6 @@
   }
   #cs-navigation {
     z-index: 10000;
-    position: fixed;
     width: 100%;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
@@ -729,7 +739,6 @@
 @media only screen and (min-width: 64rem) {
   #cs-navigation {
     z-index: 10000;
-    position: fixed;
     width: 100%;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;

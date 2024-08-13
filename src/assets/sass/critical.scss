@@ -57,7 +57,7 @@
 
         .cs-text {
             margin-bottom: 1rem;
-            font-size: 0.86rem;
+            font-size: var(--bodyFontSize);
             max-width: 25rem;
         }
 
@@ -74,7 +74,7 @@
         }
 
         .cs-button-solid {
-            font-size: 0.86rem;
+            font-size: 1.1rem;
             font-family: 'League Gothic', sans-serif;
             /* 46px - 56px */
             line-height: 2.5rem;
@@ -82,7 +82,6 @@
             font-weight: 400;
             text-align: center;
             margin: 0;
-            color: #fff;
             min-width: calc(150 / 16 * 1rem);
             padding: 0;
             background-color: transparent;
@@ -104,24 +103,8 @@
                 linear-gradient(to right, #81baa0, #46a39c) border-box;
             }
 
-            &:before {
-                content: "";
-                position: absolute;
-                height: 100%;
-                width: 0%;
-                background: #659cdf;
-                opacity: 1;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                border-radius: 1.875rem;
-                transition: width 0.3s;
-            }
-
             &:hover {
-                &:before {
-                    width: 100%;
-                }
+                background: 0;
             }
         }
 
