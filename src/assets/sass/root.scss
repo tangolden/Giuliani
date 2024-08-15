@@ -8,7 +8,7 @@
 @media only screen and (min-width: 0rem) {
     // Website colors
     :root {
-        --primary: #ffba19;
+        --primary: #eec643;
         --primaryLight: #ffd675;
         --secondary: #001f3f;
         --secondaryLight: #001f3f;
@@ -85,6 +85,7 @@
         transition: color 0.3s;
         transition-delay: 0.1s;
         text-align: center;
+        text-transform: uppercase;
 
         &:hover {
             color: #000;
@@ -1135,6 +1136,10 @@
             bottom: 75px;
         }
 
+        .cs-topper {
+            text-transform: uppercase;
+        }
+
         .cs-title {
             font-size: 4rem;
         }
@@ -1316,8 +1321,8 @@
                         text-transform: uppercase;
                         font-size: calc(18 / 16 * 1rem);
                         line-height: calc(21 / 18 * 1em);
-                        font-weight: bold;
                         color: #fff;
+                        font-weight: 400;
 
                         &:before {
                             position: absolute;
@@ -1410,7 +1415,7 @@
 
             .logo {
                 margin-left: 0;
-                height: calc(40 / 16 * 1rem);
+                height: calc(52 / 16 * 1rem);
                 text-align: left;
             }
 

@@ -5,7 +5,7 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #ffba19;
+    --primary: #eec643;
     --primaryLight: #ffd675;
     --secondary: #001f3f;
     --secondaryLight: #001f3f;
@@ -74,6 +74,7 @@
     transition: color 0.3s;
     transition-delay: 0.1s;
     text-align: center;
+    text-transform: uppercase;
   }
   .cs-button-solid:hover {
     color: #000;
@@ -960,6 +961,9 @@
     left: 330px;
     bottom: 75px;
   }
+  #cta-1394 .cs-topper {
+    text-transform: uppercase;
+  }
   #cta-1394 .cs-title {
     font-size: 4rem;
   }
@@ -1119,8 +1123,8 @@
     text-transform: uppercase;
     font-size: 1.125rem;
     line-height: 1.1666666667em;
-    font-weight: bold;
     color: #fff;
+    font-weight: 400;
   }
   #footer .right-section .lists ul h2:before {
     position: absolute;
@@ -1199,7 +1203,7 @@
   }
   #footer .left-section .logo {
     margin-left: 0;
-    height: 2.5rem;
+    height: 3.25rem;
     text-align: left;
   }
   #footer .left-section p {
