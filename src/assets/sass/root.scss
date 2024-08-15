@@ -365,7 +365,6 @@
             margin: 0 auto 0 0;
             height: 100%;
             max-width: calc(146 / 16 * 1rem);
-            width: 40%;
             /* prevents padding from affecting height and width */
             box-sizing: border-box;
             padding: 0;
@@ -1319,7 +1318,7 @@
                         position: relative;
                         margin-bottom: calc(37 / 16 * 1rem);
                         text-transform: uppercase;
-                        font-size: calc(18 / 16 * 1rem);
+                        font-size: calc(22 / 16 * 1rem);
                         line-height: calc(21 / 18 * 1em);
                         color: #fff;
                         font-weight: 400;
@@ -1415,7 +1414,7 @@
 
             .logo {
                 margin-left: 0;
-                height: calc(52 / 16 * 1rem);
+                height: calc(60 / 16 * 1rem);
                 text-align: left;
             }
 
@@ -1479,15 +1478,6 @@
             .copyright {
                 display: inline-block;
             }
-        }
-    }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #footer {
-            background: #061623;
         }
     }
 }

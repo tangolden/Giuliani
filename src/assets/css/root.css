@@ -307,7 +307,6 @@
     margin: 0 auto 0 0;
     height: 100%;
     max-width: 9.125rem;
-    width: 40%;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 0;
@@ -1121,7 +1120,7 @@
     position: relative;
     margin-bottom: 2.3125rem;
     text-transform: uppercase;
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     line-height: 1.1666666667em;
     color: #fff;
     font-weight: 400;
@@ -1203,7 +1202,7 @@
   }
   #footer .left-section .logo {
     margin-left: 0;
-    height: 3.25rem;
+    height: 3.75rem;
     text-align: left;
   }
   #footer .left-section p {
@@ -1249,12 +1248,6 @@
   }
   #footer .credit .copyright {
     display: inline-block;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #footer {
-    background: #061623;
   }
 }
 
