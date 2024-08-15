@@ -23,13 +23,11 @@
             width: auto;
             max-width: calc(650 / 16 * 1rem);
             margin: 0 calc(16 / 16 * 1rem);
-            margin-top: calc(-300 / 16 * 1rem);
             /* 40px - 60px top and bottom */
             /* 20px - 60px left and right */
-            padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1.25rem, 5.5vw, 3.75rem);
+            margin-top: clamp(1rem, 7vw, 3.75rem);
             /* prevents padding from affecting width and height */
             box-sizing: border-box;
-            border-radius: calc(12 / 16 * 1rem);
             display: flex;
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
