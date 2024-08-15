@@ -37,7 +37,7 @@
         }
 
         .cs-title {
-            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-size: clamp(3.5rem, 8vw, 8rem);
         }
 
         .cs-text {
@@ -122,7 +122,7 @@
         .cs-content {
             /* 90px - 108px */
             margin-right: clamp(5rem, 8.5vw, 6.75rem);
-            bottom: 150px;
+            margin-bottom: 150px;
         }
     }
 }
@@ -180,7 +180,7 @@
             z-index: 1;
         }
         .cs-icon {
-            width: clamp(4.25rem, 5vw, 5.5rem);
+            width: clamp(4.25rem, 8.8vw, 4.5rem);
             height: auto;
             margin: 0 0 calc(24 / 16 * 1rem) 0;
         }
