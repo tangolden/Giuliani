@@ -349,6 +349,7 @@
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
+        position: fixed;
 
         .cs-container {
             display: flex;
@@ -423,7 +424,7 @@
             left: 50%;
             transform: translateX(-50%);
             border-radius: 2px;
-            background-color: #1a1a1a;
+            background-color: var(--primary);
             height: 2px;
             width: 100%;
         }
@@ -462,7 +463,7 @@
             opacity: 0;
             visibility: hidden;
             transform: scaleX(0);
-            background-color: #fff;
+            background-image: radial-gradient(#2b2e4f, #111126);
             height: 100vh;
             overflow: hidden;
             transition: transform 0.4s, opacity 0.3s;
