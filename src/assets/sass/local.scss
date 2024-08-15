@@ -25,7 +25,7 @@
             margin: 0 calc(16 / 16 * 1rem);
             /* 40px - 60px top and bottom */
             /* 20px - 60px left and right */
-            margin-top: clamp(1rem, 7vw, 3.75rem);
+            margin-top: clamp(1rem, 9vw, 7rem);
             /* prevents padding from affecting width and height */
             box-sizing: border-box;
             display: flex;
