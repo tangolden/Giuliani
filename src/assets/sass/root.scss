@@ -270,7 +270,6 @@
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
-        position: fixed;
 
         .cs-container {
             display: flex;

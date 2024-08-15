@@ -231,7 +231,6 @@
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 0.75rem 1rem;
-    position: fixed;
   }
   #cs-navigation .cs-container {
     display: flex;
