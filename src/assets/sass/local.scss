@@ -180,7 +180,7 @@
             z-index: 1;
         }
         .cs-icon {
-            width: calc(88 / 16 * 1rem);
+            width: clamp(4.25rem, 5vw, 5.5rem);
             height: auto;
             margin: 0 0 calc(24 / 16 * 1rem) 0;
         }
