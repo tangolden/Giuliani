@@ -928,6 +928,10 @@
         height: auto;
         font-size: inherit;
         padding-block-end: calc(100 / 16 * 1rem);
+
+        h1 {
+            font-size: 6rem;
+        }
     }
 }
 
