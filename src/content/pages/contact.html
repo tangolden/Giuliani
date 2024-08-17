@@ -63,25 +63,15 @@ eleventyNavigation:
             </form>
             <div class="cs-right-section">
                 <!--Email-->
-                <span class="cs-header">Email</span>
-                <a class="cs-link" href="mailto:{{client.email}}">{{client.email}}</a>
+                <div class="border-group">
+                    <span class="cs-header">Email</span>
+                    <a class="cs-link" href="mailto:{{client.email}}">{{client.email}}</a>
+                </div>
                 <!--Phone-->
-                <span class="cs-header">Phone</span>
-                <a class="cs-link" href="tel:{{client.phoneForTel}}">{{client.phoneFormatted}}</a>
-                <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{client.address.mapLink}}">
-                    {{client.address.lineOne}},
-                    <br/>
-                    {{client.address.lineTwo}},
-                    <br/>
-                    <span class="cs-block">
-                        {{client.address.city}}
-                        {{client.address.state}}
-                        {{client.address.zip}}
-                    </span>
-                </a>
-
+                <div class="border-group">
+                    <span class="cs-header">Phone</span>
+                    <a class="cs-link" href="tel:{{client.phoneForTel}}">{{client.phoneFormatted}}</a>
+                </div>
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">
                     <source media="(min-width: 601px)" srcset="/assets/images/skyscraper.jpg">
