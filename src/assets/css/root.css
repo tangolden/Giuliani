@@ -28,6 +28,7 @@
     font-weight: 500;
     color: var(--primary);
     text-align: inherit;
+    white-space: nowrap;
   }
   .cs-title {
     text-transform: uppercase;
@@ -75,6 +76,7 @@
     transition-delay: 0.1s;
     text-align: center;
     text-transform: uppercase;
+    white-space: nowrap;
   }
   .cs-button-solid:hover {
     color: #000;

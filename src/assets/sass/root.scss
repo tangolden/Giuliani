@@ -35,6 +35,7 @@
         font-weight: 500;
         color: var(--primary);
         text-align: inherit;
+        white-space: nowrap;
     }
 
     .cs-title {
@@ -86,6 +87,7 @@
         transition-delay: 0.1s;
         text-align: center;
         text-transform: uppercase;
+        white-space: nowrap;
 
         &:hover {
             color: #000;
