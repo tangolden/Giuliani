@@ -34,7 +34,7 @@
     z-index: 10;
   }
   #sbs .cs-title {
-    font-size: clamp(3.5rem, 8vw, 8rem);
+    font-size: clamp(4.5rem, 8vw, 8rem);
   }
   #sbs .cs-text {
     font-size: var(--bodyFontSize);
