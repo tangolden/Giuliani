@@ -34,7 +34,7 @@
     text-transform: uppercase;
     color: var(--headerColor);
     font-family: "League Gothic", sans-serif;
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: clamp(4.5rem, 10vw, 8rem);
     position: relative;
     margin: 0 0 1rem 0;
     max-width: 43.75rem;
@@ -851,7 +851,7 @@
     text-transform: uppercase;
   }
   #cta-1394 .cs-title {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
   #cta-1394 .cs-title,
   #cta-1394 .cs-text {
