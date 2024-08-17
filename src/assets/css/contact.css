@@ -15,7 +15,6 @@
   }
   #cs-contact {
     padding: var(--sectionPadding);
-    font-family: "Roboto", "Arial", sans-serif;
   }
   #cs-contact .cs-container {
     margin: auto;
@@ -84,10 +83,6 @@
     padding-top: 1.25rem;
     font-family: inherit;
   }
-  #cs-contact #cs-form .cs-button-solid {
-    border: none;
-    width: 100%;
-  }
   #cs-contact .cs-right-section {
     position: relative;
     display: flex;
@@ -130,7 +125,7 @@
     opacity: 1;
     display: block;
     /* current color of the parent */
-    background: currentColor;
+    background: var(--primary);
     height: 2px;
     width: 0%;
     transition: width 0.3s;
