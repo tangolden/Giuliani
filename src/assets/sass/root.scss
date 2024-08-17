@@ -884,11 +884,12 @@
         h1 {
             position: relative;
             margin: 0 auto;
+            text-transform: uppercase;
             margin-top: calc(70 / 16 * 1rem);
             margin-bottom: calc(30 / 16 * 1rem);
             max-width: calc(500 / 16 * 1rem);
             width: 96%;
-            font-size: calc(64 / 30 * 1rem);
+            font-size: 6rem;
             color: #fff;
             text-align: center;
         }
@@ -911,20 +912,10 @@
             content: "";
             opacity: 0.7;
             display: block;
-            background: #000;
+            background-image: radial-gradient(#2b2e4f, #111126);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
             height: 100%;
             width: 100%;
-        }
-    }
-}
-
-/* Tablet */
-@media only screen and (min-width: 48rem) {
-    #int-hero {
-        font-size: 100%;
-
-        h1 {
-            font-size: calc(64 / 16 * 1rem);
         }
     }
 }
@@ -935,7 +926,6 @@
         background-attachment: fixed;
         min-height: calc(300 / 16 * 1rem);
         height: auto;
-        padding-top: calc(180 / 16 * 1rem);
         font-size: inherit;
         padding-block-end: calc(100 / 16 * 1rem);
     }

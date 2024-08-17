@@ -762,11 +762,12 @@
   #int-hero h1 {
     position: relative;
     margin: 0 auto;
+    text-transform: uppercase;
     margin-top: 4.375rem;
     margin-bottom: 1.875rem;
     max-width: 31.25rem;
     width: 96%;
-    font-size: 2.1333333333rem;
+    font-size: 6rem;
     color: #fff;
     text-align: center;
   }
@@ -787,18 +788,10 @@
     content: "";
     opacity: 0.7;
     display: block;
-    background: #000;
+    background-image: radial-gradient(#2b2e4f, #111126);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     height: 100%;
     width: 100%;
-  }
-}
-/* Tablet */
-@media only screen and (min-width: 48rem) {
-  #int-hero {
-    font-size: 100%;
-  }
-  #int-hero h1 {
-    font-size: 4rem;
   }
 }
 /* Small Desktop */
@@ -807,7 +800,6 @@
     background-attachment: fixed;
     min-height: 18.75rem;
     height: auto;
-    padding-top: 11.25rem;
     font-size: inherit;
     padding-block-end: 6.25rem;
   }

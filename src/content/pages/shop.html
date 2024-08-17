@@ -11,7 +11,7 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/about.css">
+    <link rel="stylesheet" href="/assets/css/shop.css">
 {% endblock %}
 
 {% block body %}
@@ -30,47 +30,514 @@ eleventyNavigation:
     </section>
 
     <!-- ============================================ -->
-    <!--                 Side By Side                 -->
+    <!--                  Collection                  -->
     <!-- ============================================ -->
 
-    <section id="sbs">
+    <!--
+        To add a 4th or 5th collection or more, copy and paste the cs-button and change it's data-filter to the next number, in this case it's 4. Do the same to the cs-listing and its data-category number. And that's it!
+    -->
+
+    <section id="collection-1602">
         <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Company Title</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </p>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="gavel" width="136" height="77">
+            <div class="cs-content">
+                <h2 class="cs-title">Hot Drops</h2>
+                <div class="cs-button-group">
+                    <button class="cs-button" data-filter="one">
+                        Latest
+                    </button>
+                    <button class="cs-button" data-filter="two">
+                        Top Rated
+                    </button>
+                    <button class="cs-button" data-filter="three">
+                        Best Seller
+                    </button>
                 </div>
-                <a href="/projects" class="cs-button-solid">Our Projects</a>
+            </div>
+            <div class="cs-listing-wrapper">
+                <!--Listing 1-->
+                <div class="cs-listing" data-category="one">
+                    <div class="cs-item">
+                        <a href="" class="cs-link">
+                            <div class="cs-picture-group">
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)"
+                                            srcset="/assets/images/black-loafers.png">
+                                    <source media="(min-width: 601px)"
+                                            srcset="/assets/images/black-loafers.png">
+                                    <img loading="lazy" decoding="async"
+                                            src="/assets/images/black-loafers.png"
+                                            alt="gallery" width="305" height="400">
+                                </picture>
+                                <span class="cs-offer">-20%</span>
+                            </div>
+                            <div class="cs-details">
+                                <span class="cs-category">Classics</span>
+                                <h3 class="cs-name">Noir Classic</h3>
+                                <div class="cs-actions">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">$69</span>
+                                        <span class="cs-was-price">$86</span>
+                                        <div class="cs-stars">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                        </div>
+                                    </div>
+                                    <button class="cs-buy">
+                                        <img class="cs-basket"
+                                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/ecomm-bag-icon.svg"
+                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cs-item">
+                        <a href="" class="cs-link">
+                            <div class="cs-picture-group">
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)"
+                                            srcset="/assets/images/blue-loafers.png">
+                                    <source media="(min-width: 601px)"
+                                            srcset="/assets/images/blue-loafers.png">
+                                    <img loading="lazy" decoding="async"
+                                            src="/assets/images/blue-loafers.png"
+                                            alt="gallery" width="305" height="400">
+                                </picture>
+                                <span class="cs-offer">-20%</span>
+                            </div>
+                            <div class="cs-details">
+                                <span class="cs-category">Midnight</span>
+                                <h3 class="cs-name">Blue Royale</h3>
+                                <div class="cs-actions">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">$69</span>
+                                        <span class="cs-was-price">$86</span>
+                                        <div class="cs-stars">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                        </div>
+                                    </div>
+                                    <button class="cs-buy">
+                                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/ecomm-bag-icon.svg"
+                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cs-item">
+                        <a href="" class="cs-link">
+                            <div class="cs-picture-group">
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)"
+                                            srcset="/assets/images/red-loafers.png">
+                                    <source media="(min-width: 601px)"
+                                            srcset="/assets/images/red-loafers.png">
+                                    <img loading="lazy" decoding="async"
+                                            src="/assets/images/red-loafers.png"
+                                            alt="gallery" width="305" height="400">
+                                </picture>
+                                <span class="cs-offer">-20%</span>
+                            </div>
+                            <div class="cs-details">
+                                <span class="cs-category">Cardinal</span>
+                                <h3 class="cs-name">Scarlet Noble</h3>
+                                <div class="cs-actions">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">$69</span>
+                                        <span class="cs-was-price">$86</span>
+                                        <div class="cs-stars">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                        </div>
+                                    </div>
+                                    <button class="cs-buy">
+                                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/ecomm-bag-icon.svg"
+                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>    
+                </div>
+                <!--Listing 2-->
+                <div class="cs-listing cs-hidden" data-category="two">
+                    <div class="cs-item">
+                        <a href="" class="cs-link">
+                            <div class="cs-picture-group">
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)"
+                                            srcset="/assets/images/black-loafers.png">
+                                    <source media="(min-width: 601px)"
+                                            srcset="/assets/images/black-loafers.png">
+                                    <img loading="lazy" decoding="async"
+                                            src="/assets/images/black-loafers.png"
+                                            alt="gallery" width="305" height="400">
+                                </picture>
+                                <span class="cs-offer">-20%</span>
+                            </div>
+                            <div class="cs-details">
+                                <span class="cs-category">Classics</span>
+                                <h3 class="cs-name">Noir Classic</h3>
+                                <div class="cs-actions">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">$69</span>
+                                        <span class="cs-was-price">$86</span>
+                                        <div class="cs-stars">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                        </div>
+                                    </div>
+                                    <button class="cs-buy">
+                                        <img class="cs-basket"
+                                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/ecomm-bag-icon.svg"
+                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cs-item">
+                        <a href="" class="cs-link">
+                            <div class="cs-picture-group">
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)"
+                                            srcset="/assets/images/blue-loafers.png">
+                                    <source media="(min-width: 601px)"
+                                            srcset="/assets/images/blue-loafers.png">
+                                    <img loading="lazy" decoding="async"
+                                            src="/assets/images/blue-loafers.png"
+                                            alt="gallery" width="305" height="400">
+                                </picture>
+                                <span class="cs-offer">-20%</span>
+                            </div>
+                            <div class="cs-details">
+                                <span class="cs-category">Midnight</span>
+                                <h3 class="cs-name">Blue Royale</h3>
+                                <div class="cs-actions">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">$69</span>
+                                        <span class="cs-was-price">$86</span>
+                                        <div class="cs-stars">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                        </div>
+                                    </div>
+                                    <button class="cs-buy">
+                                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/ecomm-bag-icon.svg"
+                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cs-item">
+                        <a href="" class="cs-link">
+                            <div class="cs-picture-group">
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)"
+                                            srcset="/assets/images/red-loafers.png">
+                                    <source media="(min-width: 601px)"
+                                            srcset="/assets/images/red-loafers.png">
+                                    <img loading="lazy" decoding="async"
+                                            src="/assets/images/red-loafers.png"
+                                            alt="gallery" width="305" height="400">
+                                </picture>
+                                <span class="cs-offer">-20%</span>
+                            </div>
+                            <div class="cs-details">
+                                <span class="cs-category">Cardinal</span>
+                                <h3 class="cs-name">Scarlet Noble</h3>
+                                <div class="cs-actions">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">$69</span>
+                                        <span class="cs-was-price">$86</span>
+                                        <div class="cs-stars">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                        </div>
+                                    </div>
+                                    <button class="cs-buy">
+                                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/ecomm-bag-icon.svg"
+                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!--Listing 3-->
+                <div class="cs-listing cs-hidden" data-category="three">
+                    <div class="cs-item">
+                        <a href="" class="cs-link">
+                            <div class="cs-picture-group">
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)"
+                                            srcset="/assets/images/black-loafers.png">
+                                    <source media="(min-width: 601px)"
+                                            srcset="/assets/images/black-loafers.png">
+                                    <img loading="lazy" decoding="async"
+                                            src="/assets/images/black-loafers.png"
+                                            alt="gallery" width="305" height="400">
+                                </picture>
+                                <span class="cs-offer">-20%</span>
+                            </div>
+                            <div class="cs-details">
+                                <span class="cs-category">Classics</span>
+                                <h3 class="cs-name">Noir Classic</h3>
+                                <div class="cs-actions">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">$69</span>
+                                        <span class="cs-was-price">$86</span>
+                                        <div class="cs-stars">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                        </div>
+                                    </div>
+                                    <button class="cs-buy">
+                                        <img class="cs-basket"
+                                                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/ecomm-bag-icon.svg"
+                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cs-item">
+                        <a href="" class="cs-link">
+                            <div class="cs-picture-group">
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)"
+                                            srcset="/assets/images/blue-loafers.png">
+                                    <source media="(min-width: 601px)"
+                                            srcset="/assets/images/blue-loafers.png">
+                                    <img loading="lazy" decoding="async"
+                                            src="/assets/images/blue-loafers.png"
+                                            alt="gallery" width="305" height="400">
+                                </picture>
+                                <span class="cs-offer">-20%</span>
+                            </div>
+                            <div class="cs-details">
+                                <span class="cs-category">Midnight</span>
+                                <h3 class="cs-name">Blue Royale</h3>
+                                <div class="cs-actions">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">$69</span>
+                                        <span class="cs-was-price">$86</span>
+                                        <div class="cs-stars">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                        </div>
+                                    </div>
+                                    <button class="cs-buy">
+                                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/ecomm-bag-icon.svg"
+                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cs-item">
+                        <a href="" class="cs-link">
+                            <div class="cs-picture-group">
+                                <picture class="cs-picture">
+                                    <source media="(max-width: 600px)"
+                                            srcset="/assets/images/red-loafers.png">
+                                    <source media="(min-width: 601px)"
+                                            srcset="/assets/images/red-loafers.png">
+                                    <img loading="lazy" decoding="async"
+                                            src="/assets/images/red-loafers.png"
+                                            alt="gallery" width="305" height="400">
+                                </picture>
+                                <span class="cs-offer">-20%</span>
+                            </div>
+                            <div class="cs-details">
+                                <span class="cs-category">Cardinal</span>
+                                <h3 class="cs-name">Scarlet Noble</h3>
+                                <div class="cs-actions">
+                                    <div class="cs-flex">
+                                        <span class="cs-price">$69</span>
+                                        <span class="cs-was-price">$86</span>
+                                        <div class="cs-stars">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                            <img class="cs-star"
+                                                    src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/review-star.svg"
+                                                    alt="star" height="24" width="24" loading="lazy" decoding="async">
+                                        </div>
+                                    </div>
+                                    <button class="cs-buy">
+                                        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/ecomm-bag-icon.svg"
+                                                alt="buy" height="24" width="24" loading="lazy" decoding="async">
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
   
+    <script>
+        class GalleryFilter {
+        filtersSelector = ".cs-button";
+        imagesSelector = ".cs-listing";
+        activeClass = "cs-active";
+        hiddenClass = "cs-hidden";
 
+        constructor() {
+            const $filters = document.querySelectorAll(this.filtersSelector);
+            this.$activeFilter = $filters[0];
+            this.$images = document.querySelectorAll(this.imagesSelector);
+
+            this.$activeFilter.classList.add(this.activeClass);
+
+            for (const $filter of $filters) {
+                $filter.addEventListener("click", () => this.onClick($filter));
+            }
+        }
+
+        onClick($filter) {
+            this.filter($filter.dataset.filter);
+
+            const { activeClass } = this;
+
+            this.$activeFilter.classList.remove(activeClass);
+            $filter.classList.add(activeClass);
+
+            this.$activeFilter = $filter;
+        }
+
+        filter(filter) {
+            const showAll = filter == "all";
+            const { hiddenClass } = this;
+
+            for (const $image of this.$images) {
+                const show = showAll || $image.dataset.category == filter;
+                $image.classList.toggle(hiddenClass, !show);
+            }
+        }
+    }
+
+    new GalleryFilter();
+                                
+    </script>
+
+    {% include 'components/cta.html' %}
 {% endblock %}
