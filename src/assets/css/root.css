@@ -34,7 +34,7 @@
     text-transform: uppercase;
     color: var(--headerColor);
     font-family: "League Gothic", sans-serif;
-    font-size: clamp(4.5rem, 10vw, 8rem);
+    font-size: clamp(4rem, 10vw, 8rem);
     position: relative;
     margin: 0 0 1rem 0;
     max-width: 43.75rem;
