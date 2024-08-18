@@ -34,22 +34,22 @@
             align-items: center;
             position: relative;
             z-index: 10;
-            animation: slideFromRight 1s ease forwards;
+            animation: slideFromRight 0.3s ease-in-out forwards;
         }
 
         .cs-title {
             font-size: clamp(4.5rem, 8vw, 8rem);
-            animation: slideFromRight 1.67s ease forwards;
+            animation: slideFromRight 0.5s ease-in-out forwards;
         }
 
         .cs-text {
             font-size: var(--bodyFontSize);
             margin-bottom: calc(16 / 16 * 1rem);
-            animation: slideFromRight 2.2s ease forwards;
+            animation: slideFromRight 0.7s ease-in-out forwards;
         }
 
         .cs-button-solid {
-            animation: slideFromRight 2.7s ease forwards;
+            animation: slideFromRight 0.9s ease-in-out forwards;
         }
 
         .cs-graphic {
