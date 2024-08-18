@@ -32,16 +32,19 @@
     align-items: center;
     position: relative;
     z-index: 10;
+    animation: slideFromRight 1s ease forwards;
   }
   #sbs .cs-title {
     font-size: clamp(4.5rem, 8vw, 8rem);
+    animation: slideFromRight 1.67s ease forwards;
   }
   #sbs .cs-text {
     font-size: var(--bodyFontSize);
     margin-bottom: 1rem;
+    animation: slideFromRight 2.2s ease forwards;
   }
-  #sbs .cs-text:last-of-type {
-    margin-bottom: 2rem;
+  #sbs .cs-button-solid {
+    animation: slideFromRight 2.7s ease forwards;
   }
   #sbs .cs-graphic {
     width: 100%;

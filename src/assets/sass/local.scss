@@ -34,18 +34,22 @@
             align-items: center;
             position: relative;
             z-index: 10;
+            animation: slideFromRight 1s ease forwards;
         }
 
         .cs-title {
             font-size: clamp(4.5rem, 8vw, 8rem);
+            animation: slideFromRight 1.67s ease forwards;
         }
 
         .cs-text {
             font-size: var(--bodyFontSize);
             margin-bottom: calc(16 / 16 * 1rem);
-            &:last-of-type {
-                margin-bottom: calc(32 / 16 * 1rem);
-            }
+            animation: slideFromRight 2.2s ease forwards;
+        }
+
+        .cs-button-solid {
+            animation: slideFromRight 2.7s ease forwards;
         }
 
         .cs-graphic {
@@ -57,7 +61,6 @@
             width: 100%;
             height: auto;
             height: calc(443 / 16 * 1rem);
-
             border-radius: calc(24 / 16 * 1rem);
             display: block;
             /* sends it to the top */
