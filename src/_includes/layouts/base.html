@@ -64,50 +64,46 @@
             function initializeAnimations() {
                 gsap.registerPlugin(ScrollTrigger);
 
-                // Existing faded elements animation
-                gsap.utils.toArray(".faded").forEach(element => {
-                    gsap.from(element, {
-                        x: "100%",
-                        opacity: 0,
-                        duration: 0.3,
-                        ease: "power3.out",
-                    });
-                });
-
-                // Staggered animations for .cs-content section
+                // Staggered animations
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: "#sbs .cs-content",
                         start: "top 80%",
-                        end: "bottom 20%",
+                        end: "bottom 40%",
                         toggleActions: "restart none restart none",
-                        markers: false
+                        markers: false  // Set to true if you want to see debug markers
                     }
                 });
 
-                tl.from("#sbs .cs-title", {
+                tl.from("#sbs .cs-graphic", {
                     x: "100%",
                     opacity: 0,
-                    duration: 0.8,
+                    duration: 0.3,
                     ease: "power3.out"
                 })
+                .from("#sbs .cs-title", {
+                    x: "100%",
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: "power3.out"
+                }, "-=0.2")  // Adjusted to start 0.2 seconds before the previous animation ends
                 .from("#sbs .cs-text", {
                     x: "100%",
                     opacity: 0,
-                    duration: 1,
+                    duration: 0.7,
                     ease: "power3.out"
-                }, "-=0.5")  // Starts 0.5 seconds before the previous ends
+                }, "-=0.2")  // Adjusted to start 0.2 seconds before the previous animation ends
                 .from("#sbs .cs-button-solid", {
                     x: "100%",
                     opacity: 0,
-                    duration: 1.2,
+                    duration: 0.9,
                     ease: "power3.out"
-                }, "-=0.4");  // Starts 0.4 seconds before the previous ends
+                }, "-=0.2");  // Adjusted to start 0.2 seconds before the previous animation ends
             }
 
             document.addEventListener('DOMContentLoaded', function() {
                 if ('IntersectionObserver' in window) {
-                    let fadedElements = document.querySelectorAll('.faded');
+                    let fadedElements = document.querySelectorAll('#sbs .faded');
                     let animationObserver = new IntersectionObserver((entries, observer) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
@@ -124,6 +120,7 @@
                 }
             });
         </script>
+
 
 
     </body>

@@ -64,7 +64,6 @@
     height: 100%;
     width: 100%;
     object-fit: contain;
-    transform: rotate(10deg);
   }
   #sbs .cs-picture::before {
     content: "";
