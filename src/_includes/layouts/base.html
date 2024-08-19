@@ -61,17 +61,17 @@
         <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
             function initializeAnimations() {
                 gsap.registerPlugin(ScrollTrigger);
 
-                // Staggered animations for existing elements
+                // Staggered animations for elements within .cs-content
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: "#sbs .cs-content",
                         start: "top 80%",
                         end: "bottom 40%",
                         toggleActions: "restart none restart none",
-                        markers: false  // Set to true if you want to see debug markers
                     }
                 });
 
@@ -86,65 +86,58 @@
                     opacity: 0,
                     duration: 0.5,
                     ease: "power3.out"
-                }, "-=0.2")  // Starts 0.2 seconds before the previous animation ends
+                }, "-=0.2")
                 .from("#sbs .cs-text", {
                     x: "100%",
                     opacity: 0,
                     duration: 0.7,
                     ease: "power3.out"
-                }, "-=0.2")  // Starts 0.2 seconds before the previous animation ends
+                }, "-=0.2")
                 .from("#sbs .cs-button-solid", {
                     x: "100%",
                     opacity: 0,
                     duration: 0.9,
                     ease: "power3.out"
-                }, "-=0.2");  // Starts 0.2 seconds before the previous animation ends
+                }, "-=0.2");
 
-                // New animation for a new element
+                // Animation for the image within .cs-picture
                 gsap.from("#sbs .cs-picture img", {
-                    x: "-100%",           // Move from the left
-                    opacity: 0,          // Fade in from transparent
-                    rotation: 0,         // Start with 0 degrees rotation
-                    duration: 0.5,       // Duration of the animation
+                    x: "-100%",
+                    opacity: 0,
+                    rotation: 0,
+                    duration: 0.5,
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: "#sbs .cs-picture img",
                         start: "top 80%",
                         end: "bottom 70%",
                         toggleActions: "restart none restart none",
-                        markers: false  // Set to true if you want to see debug markers
+                        markers: true // Enable markers for debugging
                     }
                 }).to("#sbs .cs-picture", {
-                    rotation: 10,        // Rotate to 10 degrees
-                    duration: 0.5,       // Duration for the rotation effect
+                    rotation: 10,
+                    duration: 0.5,
                     ease: "power3.out"
-                }, "<");  // The "<" ensures the rotation happens in parallel with the fade and slide
+                }, "<");
             }
 
-            document.addEventListener('DOMContentLoaded', function() {
-                if ('IntersectionObserver' in window) {
-                    let fadedElements = document.querySelectorAll('#sbs .cs-content');
-                    let animationObserver = new IntersectionObserver((entries, observer) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                initializeAnimations();
-                                observer.disconnect(); // Disconnect after initialization
-                            }
-                        });
+            if ('IntersectionObserver' in window) {
+                let observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            initializeAnimations();
+                            observer.disconnect(); // Disconnect to prevent multiple calls
+                        }
                     });
+                });
 
-                    fadedElements.forEach(el => animationObserver.observe(el));
-
-                    // Add the new element to the observation list
-                    let newElement = document.querySelector('#sbs .cs-picture img');
-                    if (newElement) {
-                        animationObserver.observe(newElement);
-                    }
-                } else {
-                    // Fallback for browsers without IntersectionObserver support
-                    initializeAnimations();
-                }
-            });
+                // Observe any element within #sbs to trigger the animation
+                observer.observe(document.querySelector('#sbs .cs-content'));
+            } else {
+                // Fallback if IntersectionObserver isn't supported
+                initializeAnimations();
+            }
+        });
         </script>
 
 
