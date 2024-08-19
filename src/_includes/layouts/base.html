@@ -64,22 +64,46 @@
             function initializeAnimations() {
                 gsap.registerPlugin(ScrollTrigger);
 
+                // Existing faded elements animation
                 gsap.utils.toArray(".faded").forEach(element => {
-                gsap.from(element, {
-                    y: "-100%",  // Translates to translateX(100%)
-                    opacity: 0,
-                    duration: 1,
-                    ease: "power3.out",
+                    gsap.from(element, {
+                        x: "100%",
+                        opacity: 0,
+                        duration: 0.3,
+                        ease: "power3.out",
+                    });
+                });
+
+                // Staggered animations for .cs-content section
+                const tl = gsap.timeline({
                     scrollTrigger: {
-                        trigger: element,
-                        start: "top 80%",  // Trigger animation when the top of .cs-content is 80% from the top of the viewport
-                        end: "bottom 20%", // End of the animation window
-                        toggleActions: "restart none restart none",  // Controls the animation on scroll (play, pause, resume, reverse)
-                        markers: false  // Set to true to see the start and end positions (for debugging)
+                        trigger: "#sbs .cs-content",
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "restart none restart none",
+                        markers: false
                     }
                 });
-            });
-        }
+
+                tl.from("#sbs .cs-title", {
+                    x: "100%",
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power3.out"
+                })
+                .from("#sbs .cs-text", {
+                    x: "100%",
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out"
+                }, "-=0.5")  // Starts 0.5 seconds before the previous ends
+                .from("#sbs .cs-button-solid", {
+                    x: "100%",
+                    opacity: 0,
+                    duration: 1.2,
+                    ease: "power3.out"
+                }, "-=0.4");  // Starts 0.4 seconds before the previous ends
+            }
 
             document.addEventListener('DOMContentLoaded', function() {
                 if ('IntersectionObserver' in window) {
@@ -100,6 +124,7 @@
                 }
             });
         </script>
+
 
     </body>
 </html>
