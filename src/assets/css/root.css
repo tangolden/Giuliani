@@ -102,16 +102,6 @@
   .cs-hide-on-mobile {
     display: none;
   }
-  @keyframes slideFromRight {
-    0% {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
