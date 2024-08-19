@@ -64,7 +64,7 @@
             function initializeAnimations() {
                 gsap.registerPlugin(ScrollTrigger);
 
-                // Staggered animations
+                // Staggered animations for existing elements
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: "#sbs .cs-content",
@@ -86,24 +86,44 @@
                     opacity: 0,
                     duration: 0.5,
                     ease: "power3.out"
-                }, "-=0.2")  // Adjusted to start 0.2 seconds before the previous animation ends
+                }, "-=0.2")  // Starts 0.2 seconds before the previous animation ends
                 .from("#sbs .cs-text", {
                     x: "100%",
                     opacity: 0,
                     duration: 0.7,
                     ease: "power3.out"
-                }, "-=0.2")  // Adjusted to start 0.2 seconds before the previous animation ends
+                }, "-=0.2")  // Starts 0.2 seconds before the previous animation ends
                 .from("#sbs .cs-button-solid", {
                     x: "100%",
                     opacity: 0,
                     duration: 0.9,
                     ease: "power3.out"
-                }, "-=0.2");  // Adjusted to start 0.2 seconds before the previous animation ends
+                }, "-=0.2");  // Starts 0.2 seconds before the previous animation ends
+
+                // New animation for a new element
+                gsap.from("#sbs .cs-picture", {
+                    x: "-100%",           // Move from the left
+                    opacity: 0,          // Fade in from transparent
+                    rotation: 0,         // Start with 0 degrees rotation
+                    duration: 0.5,       // Duration of the animation
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: "#sbs .cs-picture",
+                        start: "top 80%",
+                        end: "bottom 40%",
+                        toggleActions: "restart none restart none",
+                        markers: false  // Set to true if you want to see debug markers
+                    }
+                }).to("#sbs .cs-picture", {
+                    rotation: 10,        // Rotate to 10 degrees
+                    duration: 0.5,       // Duration for the rotation effect
+                    ease: "power3.out"
+                }, "<");  // The "<" ensures the rotation happens in parallel with the fade and slide
             }
 
             document.addEventListener('DOMContentLoaded', function() {
                 if ('IntersectionObserver' in window) {
-                    let fadedElements = document.querySelectorAll('#sbs .faded');
+                    let fadedElements = document.querySelectorAll('#sbs .cs.content');
                     let animationObserver = new IntersectionObserver((entries, observer) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
@@ -114,12 +134,19 @@
                     });
 
                     fadedElements.forEach(el => animationObserver.observe(el));
+
+                    // Add the new element to the observation list
+                    let newElement = document.querySelector('#sbs .cs-picture');
+                    if (newElement) {
+                        animationObserver.observe(newElement);
+                    }
                 } else {
                     // Fallback for browsers without IntersectionObserver support
                     initializeAnimations();
                 }
             });
         </script>
+
 
 
 
