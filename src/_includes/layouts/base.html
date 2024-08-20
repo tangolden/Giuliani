@@ -102,15 +102,8 @@
                 gsap.from("#sbs .cs-picture img", {
                     x: "-100%",
                     opacity: 0,
-                    rotation: 0,
                     duration: 0.7,
                     ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: "#sbs .cs-picture img",
-                        start: "top 80%",
-                        end: "bottom 70%",
-                        toggleActions: "restart none restart none"
-                    }
                 }).to("#sbs .cs-picture img", {
                     rotation: 10,
                     duration: 0.5,
