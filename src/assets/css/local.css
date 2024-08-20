@@ -58,7 +58,7 @@
     position: relative;
   }
   #sbs .cs-picture img {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     height: 100%;
@@ -67,7 +67,7 @@
   }
   #sbs .cs-picture::before {
     content: "";
-    position: absolute;
+    position: relative;
     background-color: #0b0b0b;
     width: 95%;
     height: 150px;
@@ -75,7 +75,6 @@
     top: 65%;
     filter: blur(25px);
     border-radius: 30%;
-    transform: rotate(37deg);
     opacity: 0.6;
   }
 }

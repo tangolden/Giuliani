@@ -57,7 +57,6 @@
         </main>
         {% include "components/footer.html" %}
 
-        <!-- GSAP and ScrollTrigger JS -->
         <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
         <script>
@@ -70,7 +69,7 @@
                         trigger: "#sbs .cs-content",
                         start: "top 80%",
                         end: "bottom 40%",
-                        toggleActions: "restart none restart none",
+                        toggleActions: "restart none restart none"
                     }
                 });
 
@@ -104,15 +103,15 @@
                     x: "-100%",
                     opacity: 0,
                     rotation: 0,
-                    duration: 0.5,
+                    duration: 0.7,
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: "#sbs .cs-picture img",
                         start: "top 80%",
                         end: "bottom 70%",
-                        toggleActions: "restart none restart none",
+                        toggleActions: "restart none restart none"
                     }
-                }).to("#sbs .cs-picture", {
+                }).to("#sbs .cs-picture img", {
                     rotation: 10,
                     duration: 0.5,
                     ease: "power3.out"
@@ -136,8 +135,6 @@
                 initializeAnimations();
             }
         </script>
-
-
 
 
 
