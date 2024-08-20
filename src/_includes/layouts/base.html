@@ -63,14 +63,17 @@
             function initializeAnimations() {
                 gsap.registerPlugin(ScrollTrigger);
 
+                // Define the shared ScrollTrigger configuration
+                const sbsScrollTrigger = {
+                    trigger: "#sbs .cs-content",
+                    start: "top 50%",
+                    end: "bottom 50%",
+                    toggleActions: "restart none restart none"
+                };
+
                 // Staggered animations for elements within .cs-content
                 const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#sbs .cs-content",
-                        start: "top 80%",
-                        end: "bottom 40%",
-                        toggleActions: "restart none restart none"
-                    }
+                    scrollTrigger: sbsScrollTrigger
                 });
 
                 tl.from("#sbs .cs-graphic", {
@@ -98,17 +101,22 @@
                     ease: "power3.out"
                 }, "-=0.2");
 
-                // Animation for the image within .cs-picture
-                gsap.from("#sbs .cs-picture img", {
-                    x: "-100%",
-                    opacity: 0,
-                    duration: 0.7,
-                    ease: "power3.out",
-                }).to("#sbs .cs-picture img", {
-                    rotation: 10,
-                    duration: 0.5,
-                    ease: "power3.out"
-                }, "<");
+                // Animation for the image within .cs-picture with the same ScrollTrigger configuration
+                gsap.fromTo("#sbs .cs-picture img", 
+                    {
+                        x: "-100%",        
+                        opacity: 0,       
+                        rotation: -80       
+                    },
+                    {
+                        x: "0%",        
+                        opacity: 1,       
+                        rotation: 10,    
+                        duration: 1,     
+                        ease: "power3.out",
+                        scrollTrigger: sbsScrollTrigger
+                    }
+                );
             }
 
             if ('IntersectionObserver' in window) {
@@ -121,13 +129,15 @@
                     });
                 });
 
-                // Observe any element within #sbs to trigger the animation
+                // Observe the .cs-content to trigger the animation
                 observer.observe(document.querySelector('#sbs .cs-content'));
             } else {
                 // Fallback if IntersectionObserver isn't supported
                 initializeAnimations();
             }
         </script>
+
+
 
 
 

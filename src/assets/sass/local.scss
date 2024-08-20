@@ -64,7 +64,7 @@
             position: relative;
 
             img {
-                position: relative;
+                position: absolute;
                 top: 0;
                 left: 0;
                 height: 100%;
@@ -74,7 +74,7 @@
             
             &::before {
                 content: '';
-                position: relative;
+                position: absolute;
                 background-color: #0b0b0b;
                 width: 95%;
                 height: 150px;
@@ -82,7 +82,7 @@
                 top: 65%;
                 filter: blur(25px);
                 border-radius: 30%;
-              
+                transform: rotate(37deg);
                 opacity: 0.6;
             }
         }
