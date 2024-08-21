@@ -71,11 +71,11 @@
     background-color: #0b0b0b;
     width: 95%;
     height: 150px;
-    right: 17%;
+    right: 13%;
     top: 65%;
     filter: blur(25px);
     border-radius: 30%;
-    transform: rotate(37deg);
+    transform: rotate(30deg);
     opacity: 0.6;
   }
 }
