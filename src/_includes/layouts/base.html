@@ -130,12 +130,16 @@
                 });
 
                 // Observe the .cs-content to trigger the animation
-                observer.observe(document.querySelector('#sbs .cs-content'));
+                const content = document.querySelector('#sbs .cs-content');
+                if (content) {
+                    observer.observe(content);
+                }
             } else {
                 // Fallback if IntersectionObserver isn't supported
                 initializeAnimations();
             }
         </script>
+
 
 
 
