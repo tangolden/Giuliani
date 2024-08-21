@@ -42,7 +42,6 @@ eleventyNavigation:
 
     <section id="RTsbs-459">
         <div class="cs-container">
-            <!-- Slide 1 -->
             <div class="cs-content">
                 <span class="cs-topper">Classics</span>
                 <h2 class="cs-title">Noir Classic</h2>
@@ -57,45 +56,8 @@ eleventyNavigation:
             <picture class="cs-picture">
                 <source media="(max-width: 600px)" srcset="/assets/images/black-loafers.png">
                 <source media="(min-width: 601px)" srcset="/assets/images/black-loafers.png">
-                <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/black-loafers.png" alt="Black loafers" width="649" height="617">
+                <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/black-loafers.png" alt="grass" width="649" height="617">
             </picture>
-
-            <!-- Slide 2 -->
-            <div class="cs-content">
-                <span class="cs-topper">Sport Shoes</span>
-                <h2 class="cs-title">NIKE D.02</h2>
-                <p class="cs-text">
-                    Cutting-edge design meets superior performance, perfect for athletes and style enthusiasts alike.
-                </p>
-                <div class="text-buttons">
-                    <a href="" class="cs-button-solid">Add to cart</a>
-                    <a href="" class="cs-button-solid">See more</a>
-                </div>
-            </div>
-            <picture class="cs-picture">
-                <source media="(max-width: 600px)" srcset="/assets/images/black-loafers.png">
-                <source media="(min-width: 601px)" srcset="/assets/images/black-loafers.png">
-                <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/black-loafers.png" alt="NIKE D.02 shoes" width="649" height="617">
-            </picture>
-
-            <!-- Slide 3 -->
-            <div class="cs-content">
-                <span class="cs-topper">Sport Shoes</span>
-                <h2 class="cs-title">NIKE D.03</h2>
-                <p class="cs-text">
-                    The pinnacle of comfort and style, designed for those who demand the best in athletic footwear.
-                </p>
-                <div class="text-buttons">
-                    <a href="" class="cs-button-solid">Add to cart</a>
-                    <a href="" class="cs-button-solid">See more</a>
-                </div>
-            </div>
-            <picture class="cs-picture">
-                <source media="(max-width: 600px)" srcset="/assets/images/black-loafers.png">
-                <source media="(min-width: 601px)" srcset="/assets/images/black-loafers.png">
-                <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/black-loafers.png" alt="NIKE D.03 shoes" width="649" height="617">
-            </picture>
-
             <div class="indicators">
                 <div class="number">01</div>
                 <ul>
@@ -108,7 +70,7 @@ eleventyNavigation:
                 <div class="arrows">
                     <button id="prev">&lt;</button>
                     <button id="next">&gt;</button>
-                </div>
+                </div>   
             </div>
         </div>
     </section>
@@ -636,63 +598,69 @@ eleventyNavigation:
 
   
     <script>
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
-        const carousel = document.getElementById('RTsbs-459');
-        const container = carousel.querySelector('.cs-container');
-        const contents = [...container.querySelectorAll('.cs-content')];
-        const pictures = [...container.querySelectorAll('.cs-picture')];
-        const indicator = container.querySelector('.indicators');
-        const dots = [...indicator.querySelectorAll('.indicators ul li')];
-        const numberIndicator = indicator.querySelector('.number');
-
+        let prevBtn = document.getElementById('prev');
+        let nextBtn = document.getElementById('next');
+        let carousel = document.getElementById('hero');
+        let items = carousel.querySelectorAll('.cs-container .item');
+        let indicator = carousel.querySelector('.indicators');
+        let dots = indicator.querySelectorAll('ul li');
         let active = 0;
-        const firstPosition = 0;
-        const lastPosition = contents.length - 1;
-        let autoPlay;
+        let firstPosition = 0;
+        let lastPosition = items.length - 1;
 
-        const startAutoPlay = () => {
-            clearInterval(autoPlay);
-            // change 5000 to the duration between slides (in ms)
-            autoPlay = setInterval(() => nextBtn.click(), 5000);
-        };
+        let autoplayInterval;
 
-        const setSlider = () => {
-            contents.forEach((content, index) => {
-                content.classList.toggle('active', index === active);
+        // Function to set the active slide and dot
+        let setSlider = () => {
+            let itemActiveOld = carousel.querySelector('.cs-container .item.active');
+            if (itemActiveOld) {
+                itemActiveOld.classList.remove('active');
+            }
+            items[active].classList.add('active');
+
+            let dotActiveOld = indicator.querySelector('li.active');
+            if (dotActiveOld) {
+                dotActiveOld.classList.remove('active');
+            }
+            dots[active].classList.add('active');
+            indicator.querySelector('.number').innerText = '0' + (active + 1);
+        }
+
+        // Function to reset the autoplay interval
+        let resetAutoplay = () => {
+            clearInterval(autoplayInterval);
+            autoplayInterval = setInterval(() => {
+                active = (active === lastPosition) ? firstPosition : active + 1;
+                setSlider();
+            }, 5000); // Autoplay interval of 5 seconds
+        }
+
+        // Event listeners for prev and next buttons
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                active = (active === firstPosition) ? lastPosition : active - 1;
+                setSlider();
+                resetAutoplay();
             });
 
-            pictures.forEach((picture, index) => {
-                picture.classList.toggle('active', index === active);
+            nextBtn.addEventListener('click', () => {
+                active = (active === lastPosition) ? firstPosition : active + 1;
+                setSlider();
+                resetAutoplay();
             });
+        }
 
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === active);
-            });
-
-            numberIndicator.textContent = 0${active + 1};
-            startAutoPlay();
-        };
-
-        const moveSlider = (direction) => {
-            active = direction === 'next'
-                ? (active + 1 > lastPosition ? 0 : active + 1)
-                : (active - 1 < firstPosition ? lastPosition : active - 1);
-
-            setSlider();
-        };
-
-        setSlider();
-
-        nextBtn.addEventListener('click', () => moveSlider('next'));
-        prevBtn.addEventListener('click', () => moveSlider('prev'));
-
-        dots.forEach((dot, position) => {
-            dot.addEventListener('click', () => {
+        // Event listeners for dots
+        dots.forEach((item, position) => {
+            item.onclick = () => {
                 active = position;
                 setSlider();
-            });
-        });
+                resetAutoplay();
+            }
+        })
+
+        // Start the autoplay initially
+        resetAutoplay();
     </script>
 
     <script>
