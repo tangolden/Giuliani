@@ -25,14 +25,14 @@ eleventyNavigation:
     </section>
 
     <!-- ============================================ -->
-    <!--                    Tayyab                    -->
+    <!--                    sbs                    -->
     <!-- ============================================ -->
 
-    <section id="sbs">
+    <section id="sbs2">
         <div class="cs-container">
             <!-- Left Image Section -->
             <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
+                <picture class="cs-picture">
                     <source media="(max-width: 600px)" srcset="/assets/images/chunky-loafers.png">
                     <source media="(min-width: 601px)" srcset="/assets/images/chunky-loafers.png">
                     <img decoding="async" src="/assets/images/chunky-loafers.png" alt="person" loading="lazy" width="522" height="581">
@@ -59,6 +59,84 @@ eleventyNavigation:
             </div>
         </div>
     </section>
+
+    <script>
+        function initializeSbs2Animations() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const sbs2ScrollTrigger = {
+                trigger: "#sbs2 .cs-container",
+                start: "top 50%",
+                end: "bottom 40%",
+                toggleActions: "restart none restart none"
+            };
+
+            // Animation for the image within .cs-picture with ScrollTrigger
+            gsap.fromTo("#sbs2 .cs-picture",
+                {
+                    x: "-100%",
+                    opacity: 0,
+                    rotation: -80
+                },
+                {
+                    x: "0%",
+                    opacity: 1,
+                    rotation: 10,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: sbs2ScrollTrigger
+                }
+            );
+
+            // Staggered animations for elements within #sbs2 using the same ScrollTrigger
+            const tlSbs2 = gsap.timeline({
+                scrollTrigger: sbs2ScrollTrigger
+            });
+
+            tlSbs2.from("#sbs2 .cs-topper", {
+                x: "100%",
+                opacity: 0,
+                duration: 0.3,
+                ease: "power3.out"
+            })
+            .from("#sbs2 .cs-title", {
+                x: "100%",
+                opacity: 0,
+                duration: 0.5,
+                ease: "power3.out"
+            }, "-=0.2")
+            .from("#sbs2 .cs-text", {
+                x: "100%",
+                opacity: 0,
+                duration: 0.7,
+                ease: "power3.out"
+            }, "-=0.2")
+            .from("#sbs2 .cs-flex-group", {
+                x: "100%",
+                opacity: 0,
+                duration: 0.9,
+                ease: "power3.out"
+            }, "-=0.2");
+        }
+
+        if ('IntersectionObserver' in window) {
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        initializeSbs2Animations();
+                        observer.disconnect(); // Disconnect to prevent multiple calls
+                    }
+                });
+            });
+
+            const sbs2Section = document.querySelector('#sbs2 .cs-container');
+            if (sbs2Section) {
+                observer.observe(sbs2Section);
+            }
+        } else {
+            initializeSbs2Animations();
+        }
+    </script>
 
   
     {% include 'components/cta.html' %}

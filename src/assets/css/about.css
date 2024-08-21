@@ -4,10 +4,10 @@
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0em) {
-  #sbs {
+  #sbs2 {
     padding: var(--sectionPadding);
   }
-  #sbs .cs-container {
+  #sbs2 .cs-container {
     width: 100%;
     max-width: 80rem;
     margin: auto;
@@ -17,7 +17,7 @@
     align-items: center;
     row-gap: 2.5rem;
   }
-  #sbs .cs-left {
+  #sbs2 .cs-left {
     /* scaling the font size with the view width */
     font-size: min(2.31vw, 0.7em);
     /* using ems so we can use font size to scale the whole section */
@@ -25,7 +25,7 @@
     height: 39.75em;
     position: relative;
   }
-  #sbs .cs-left::before {
+  #sbs2 .cs-left::before {
     content: "";
     position: absolute;
     background-color: #0b0b0b;
@@ -38,7 +38,7 @@
     transform: rotate(37deg);
     opacity: 0.6;
   }
-  #sbs .cs-picture {
+  #sbs2 .cs-picture {
     border-radius: 1.5em;
     display: block;
     margin: auto;
@@ -46,7 +46,7 @@
     overflow: hidden;
     transform: rotate(10deg);
   }
-  #sbs .cs-picture img {
+  #sbs2 .cs-picture img {
     width: 100%;
     height: 100%;
     /* makes image act like a background image */
@@ -54,30 +54,30 @@
     top: 0;
     left: 0;
   }
-  #sbs .cs-picture1 {
+  #sbs2 .cs-picture1 {
     top: 0;
     left: 0;
   }
-  #sbs .cs-right {
+  #sbs2 .cs-right {
     max-width: 33.875rem;
     margin: auto;
   }
-  #sbs .cs-topper {
+  #sbs2 .cs-topper {
     text-align: center;
   }
-  #sbs .cs-title {
+  #sbs2 .cs-title {
     text-align: center;
     max-width: 50rem;
   }
-  #sbs .cs-text {
+  #sbs2 .cs-text {
     text-align: center;
     max-width: 46.875rem;
     margin-bottom: 1rem;
   }
-  #sbs .cs-text:last-of-type {
+  #sbs2 .cs-text:last-of-type {
     margin-bottom: 2rem;
   }
-  #sbs .cs-flex-group {
+  #sbs2 .cs-flex-group {
     /* 16px - 32px */
     padding: clamp(1rem, 3vw, 2rem);
     background-image: radial-gradient(#2b2e4f, #111126);
@@ -85,14 +85,14 @@
     border-radius: 1rem;
     position: relative;
   }
-  #sbs .cs-flex-p {
+  #sbs2 .cs-flex-p {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     line-height: 1.5em;
     margin: 0 0 1rem;
     color: var(--bodyTextColor);
   }
-  #sbs .cs-name {
+  #sbs2 .cs-name {
     font-size: 1rem;
     font-weight: bold;
     line-height: 1.2em;
@@ -101,13 +101,13 @@
     color: var(--headerColor);
     display: block;
   }
-  #sbs .cs-job {
+  #sbs2 .cs-job {
     font-size: 0.875rem;
     line-height: 1.5em;
     color: var(--bodyTextColor);
     display: block;
   }
-  #sbs .cs-quote-icon {
+  #sbs2 .cs-quote-icon {
     /* 60px - 136px */
     width: clamp(3.75rem, 10vw, 5.5rem);
     height: auto;
@@ -119,19 +119,19 @@
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64em) {
-  #sbs .cs-container {
+  #sbs2 .cs-container {
     flex-flow: row;
     justify-content: space-between;
     gap: 3.25rem;
   }
-  #sbs .cs-left {
+  #sbs2 .cs-left {
     font-size: min(1.2vw, 1em);
     flex: none;
   }
-  #sbs .cs-right {
+  #sbs2 .cs-right {
     margin: 0;
   }
-  #sbs .cs-picture {
+  #sbs2 .cs-picture {
     position: absolute;
   }
 }

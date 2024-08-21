@@ -6,7 +6,7 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0em) {
-    #sbs {
+    #sbs2 {
         padding: var(--sectionPadding);
 
         .cs-container {
@@ -137,7 +137,7 @@
 
 /* Desktop - 1024px */
 @media only screen and (min-width: 64em) {
-    #sbs {
+    #sbs2 {
         .cs-container {
             flex-flow: row;
             justify-content: space-between;
