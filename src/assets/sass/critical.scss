@@ -55,6 +55,7 @@
                 opacity: 1;
                 transform: translateX(0);
                 height: initial;
+                padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1rem, 4.5vw, 3.75rem);
                 top: -4rem;
             }
         }
@@ -276,7 +277,6 @@
 
             &.active {
                 top: auto;
-                padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1.25rem, 5.5vw, 3.75rem);
             }
         }
 
