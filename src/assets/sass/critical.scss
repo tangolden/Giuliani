@@ -285,9 +285,7 @@
 
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #RTsbs-459,
-    #RTsbsr-459,
-    #RTsbst-459 {
+    #RTsbs-459 {
         .cs-content {
             /* 90px - 108px */
             margin-right: clamp(5rem, 8.5vw, 6.75rem);
