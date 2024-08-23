@@ -189,7 +189,7 @@
   #RTsbs-459 .indicators {
     z-index: 1;
     position: absolute;
-    top: 58%;
+    top: 59%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -202,7 +202,7 @@
   }
   #RTsbs-459 .number {
     font-family: "League Gothic", sans-serif;
-    font-size: 5.7vw;
+    font-size: 11.4vw;
   }
   #RTsbs-459 ul {
     display: flex;
@@ -260,6 +260,9 @@
   }
   #RTsbs-459 .indicators {
     top: 52%;
+  }
+  #RTsbs-459 .number {
+    font-size: 5.7vw;
   }
 }
 /* Small Desktop - 1024px */

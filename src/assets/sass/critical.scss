@@ -214,7 +214,7 @@
         .indicators {
             z-index: 1;
             position: absolute;
-            top: 58%;
+            top: 59%;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -228,7 +228,7 @@
 
         .number {
             font-family: "League Gothic", sans-serif;
-            font-size: 5.7vw;
+            font-size: 11.4vw;
         }
 
         ul {
@@ -298,6 +298,10 @@
 
         .indicators {
             top: 52%;
+        }
+
+        .number {
+            font-size: 5.7vw;
         }
     }
 }
