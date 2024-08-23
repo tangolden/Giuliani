@@ -226,23 +226,17 @@
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #RTsbs-459 .cs-container,
-  #RTsbsr-459 .cs-container,
-  #RTsbst-459 .cs-container {
+  #RTsbs-459 .cs-container {
     position: relative;
     justify-content: center;
     align-items: flex-end;
     padding: 3.75rem 0;
   }
-  #RTsbs-459 .cs-content,
-  #RTsbsr-459 .cs-content,
-  #RTsbst-459 .cs-content {
+  #RTsbs-459 .cs-content {
     margin: 0;
     width: 65%;
   }
-  #RTsbs-459 .cs-picture,
-  #RTsbsr-459 .cs-picture,
-  #RTsbst-459 .cs-picture {
+  #RTsbs-459 .cs-picture {
     position: absolute;
     left: 0;
     height: 100%;
