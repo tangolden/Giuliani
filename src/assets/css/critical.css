@@ -66,7 +66,6 @@
   #RTsbs-459 .cs-title {
     text-transform: uppercase;
     font-family: "League Gothic", sans-serif;
-    font-size: clamp(3.5rem, 10vw, 8rem);
     color: #fff;
   }
   #RTsbs-459 .text-buttons {
@@ -140,7 +139,7 @@
   }
   #RTsbs-459 .cs-picture::before {
     position: absolute;
-    top: 103%;
+    top: 110%;
     left: 11%;
     content: "";
     border-radius: 30%;
