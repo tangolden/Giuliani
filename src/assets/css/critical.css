@@ -189,7 +189,7 @@
   #RTsbs-459 .indicators {
     z-index: 1;
     position: absolute;
-    top: 61%;
+    top: 59%;
     left: 55%;
     transform: translateX(-50%);
     display: flex;
