@@ -121,12 +121,13 @@
     /* sends it to the top */
     order: -1;
     z-index: 1;
-    position: relative;
+    position: absolute;
     opacity: 0;
     transform: translateX(50rem);
     display: block;
     height: 0;
     width: 100%;
+    top: 0;
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
   }
   #RTsbs-459 .cs-picture img {
@@ -136,7 +137,7 @@
     transform: rotate(-25deg);
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
   }
   #RTsbs-459 .cs-picture::before {
     position: absolute;
@@ -236,10 +237,14 @@
   }
   #RTsbs-459 .cs-picture {
     position: absolute;
+    top: auto;
     left: 0;
     height: 100%;
     /* 465px - 617px */
     width: clamp(29.0625rem, 53vw, 58.5625rem);
+  }
+  #RTsbs-459 .cs-picture img {
+    object-fit: cover;
   }
 }
 /* Small Desktop - 1024px */
