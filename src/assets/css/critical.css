@@ -189,7 +189,7 @@
   #RTsbs-459 .indicators {
     z-index: 1;
     position: absolute;
-    top: 52%;
+    top: 58%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -257,6 +257,9 @@
   }
   #RTsbs-459 .more {
     height: 200px; /* Sets height to 200px */
+  }
+  #RTsbs-459 .indicators {
+    top: 52%;
   }
 }
 /* Small Desktop - 1024px */
