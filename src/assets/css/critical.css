@@ -52,7 +52,7 @@
     transform: translateX(0);
     height: initial;
     padding: clamp(2.5rem, 7vw, 3.75rem) clamp(1rem, 4.5vw, 3.75rem);
-    top: -2rem;
+    top: -4rem;
   }
   #RTsbs-459 .cs-topper {
     margin-top: 1rem;
