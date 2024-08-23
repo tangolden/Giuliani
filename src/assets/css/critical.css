@@ -19,12 +19,12 @@
   }
   #RTsbs-459 .cs-container::after {
     position: absolute;
-    right: 60px;
+    right: 75px;
     content: "";
     border-right: 1px solid #324073;
     border-left: 1px solid #324073;
     height: 100%;
-    width: 60px;
+    width: 75px;
     pointer-events: none;
   }
   #RTsbs-459 .cs-content {
@@ -159,7 +159,7 @@
     top: 52%;
     border-top: 1px solid #324073;
     border-bottom: 1px solid #324073;
-    height: 60px; /* Sets height to 200px */
+    height: 75px; /* Sets height to 200px */
     width: 100%; /* Full width of the containing block */
   }
   #RTsbs-459 .arrows {
