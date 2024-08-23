@@ -6,7 +6,6 @@
   #RTsbs-459 {
     position: relative;
     background-image: radial-gradient(#2b2e4f, #111126);
-    padding: var(--sectionPadding);
   }
   #RTsbs-459 .cs-container {
     display: flex;
@@ -121,13 +120,12 @@
     /* sends it to the top */
     order: -1;
     z-index: 1;
-    position: absolute;
+    position: relative;
     opacity: 0;
     transform: translateX(50rem);
     display: block;
     height: 0;
     width: 100%;
-    top: 0;
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
   }
   #RTsbs-459 .cs-picture img {
@@ -225,6 +223,9 @@
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
+  #RTsbs-459 {
+    padding-bottom: 6.25rem;
+  }
   #RTsbs-459 .cs-container {
     position: relative;
     justify-content: center;
@@ -237,7 +238,6 @@
   }
   #RTsbs-459 .cs-picture {
     position: absolute;
-    top: auto;
     left: 0;
     height: 100%;
     /* 465px - 617px */
@@ -249,7 +249,9 @@
 }
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #RTsbs-459 .cs-content {
+  #RTsbs-459 .cs-content,
+  #RTsbsr-459 .cs-content,
+  #RTsbst-459 .cs-content {
     /* 90px - 108px */
     margin-right: clamp(5rem, 8.5vw, 6.75rem);
   }
