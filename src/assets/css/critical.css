@@ -15,6 +15,7 @@
     margin: auto;
     max-width: 80rem;
     width: 100%;
+    margin-top: -2rem;
   }
   #RTsbs-459 .cs-container::after {
     position: absolute;
@@ -231,6 +232,7 @@
     justify-content: center;
     align-items: flex-end;
     padding: 3.75rem 0;
+    margin-top: 0;
   }
   #RTsbs-459 .cs-content {
     margin: 0;
