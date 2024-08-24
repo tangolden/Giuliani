@@ -740,8 +740,8 @@ eleventyNavigation:
 
             const sbsScrollTrigger = {
                 trigger: "#sbs",
-                start: "top 40%",
-                end: "bottom 20%",
+                start: "top 45%",
+                end: "bottom 60%",
                 toggleActions: "restart reverse restart reverse"
             };
 
@@ -765,8 +765,8 @@ eleventyNavigation:
 
             const servicesScrollTrigger = {
                 trigger: "#hero-1618",
-                start: "top 40%",
-                end: "bottom 20%",
+                start: "top 60%",
+                end: "bottom 45%",
                 toggleActions: "restart reverse restart reverse"
             };
 
@@ -777,6 +777,21 @@ eleventyNavigation:
             tlServices.from("#hero-1618 .cs-item .cs-icon", {x: "-100%", opacity: 0, duration: 0.5, rotation: 360, ease: "power3.out"})
               .from("#hero-1618 .cs-item .cs-h3", {x: "-100%", opacity: 0, duration: 0.7, ease: "power3.out"})
               .from("#hero-1618 .cs-item .cs-item-text", {x: "-100%", opacity: 0, duration: 0.9, ease: "power3.out"});
+            
+            const collectionScrollTrigger = {
+                trigger: "#collection-1602",
+                start: "top 45%",
+                end: "bottom 40%",
+                toggleActions: "restart reverse restart reverse"
+            };
+
+            const tlCollection = gsap.timeline({
+                scrollTrigger: collectionScrollTrigger
+            });
+
+            tlCollection.from("#collection-1602 .cs-title", {x: "-100%", opacity: 0, duration: 0.5, ease: "power3.out"})
+              .from("#collection-1602 .cs-button-group .cs-button", {x: "100%", opacity: 0, duration: 0.5, ease: "power3.out"})
+              .from("#collection-1602 .cs-listing-wrapper", {y: "100%", opacity: 0, duration: 0.7, ease: "power3.out"});
 
         });
     </script>
