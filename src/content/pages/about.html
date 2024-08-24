@@ -60,6 +60,28 @@ eleventyNavigation:
         </div>
     </section>
 
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> 
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+            gsap.fromTo("#sbs2 .cs-picture",
+                {
+                    x: "-100%",
+                    opacity: 0,
+                    rotation: -80
+                },
+                {
+                    x: "0%",
+                    opacity: 1,
+                    rotation: 10,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: #sbs2 .cs-picture
+                }
+            );
+    </script> 
+
 
 
   
