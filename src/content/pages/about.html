@@ -61,32 +61,15 @@ eleventyNavigation:
     </section>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.fromTo("#sbs2 .cs-picture",
-            {
-                x: "-100%",
-                opacity: 0,
-                rotation: -80
-            },
-            {
-                x: "0%",
-                opacity: 1,
-                rotation: 10,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: "#sbs2 .cs-picture",
-                    start: "top 40%",  // Adjust as needed
-                    end: "bottom 20%",  // Adjust as needed
-                    scrub: true, // Optional, for smoother animation
-                    toggleActions: "restart none restart none" // Optional
-                }
-            }
-        );
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            gsap.to(".cs-picture", {
+                x: 700,
+                duration: 3
+            });
+        });
     </script>
-
-
 
 
   
