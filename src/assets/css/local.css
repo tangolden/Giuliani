@@ -56,7 +56,6 @@
     /* sends it to the top */
     order: -1;
     position: relative;
-    opacity: 0;
   }
   #sbs .cs-picture img {
     position: absolute;
