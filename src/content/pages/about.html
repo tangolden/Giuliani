@@ -61,81 +61,16 @@ eleventyNavigation:
     </section>
 
     <script>
-        function initializeSbs2Animations() {
-            gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
-            const sbs2ScrollTrigger = {
-                trigger: "#sbs2",
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "restart none restart none"
-            };
+        gsap.to("#sbs2 .cs-picture img", {
+            x: -100%,
+            duration: 1,
+            opacity: 1,
+            scrollTrigger: "#sbs2 .cs-picture img"
+        })
 
-            // Animation for the image within .cs-picture with ScrollTrigger
-            gsap.fromTo("#sbs2 .cs-picture",
-                {
-                    x: "-100%",
-                    opacity: 0,
-                    rotation: -80
-                },
-                {
-                    x: "0%",
-                    opacity: 1,
-                    rotation: 10,
-                    duration: 1,
-                    ease: "power3.out",
-                    scrollTrigger: sbs2ScrollTrigger
-                }
-            );
-
-            // Staggered animations for elements within #sbs2 using the same ScrollTrigger
-            const tlSbs2 = gsap.timeline({
-                scrollTrigger: sbs2ScrollTrigger
-            });
-
-            tlSbs2.from("#sbs2 .cs-topper", {
-                x: "100%",
-                opacity: 0,
-                duration: 0.3,
-                ease: "power3.out"
-            })
-            .from("#sbs2 .cs-title", {
-                x: "100%",
-                opacity: 0,
-                duration: 0.5,
-                ease: "power3.out"
-            }, "-=0.2")
-            .from("#sbs2 .cs-text", {
-                x: "100%",
-                opacity: 0,
-                duration: 0.7,
-                ease: "power3.out"
-            }, "-=0.2")
-            .from("#sbs2 .cs-flex-group", {
-                x: "100%",
-                opacity: 0,
-                duration: 0.9,
-                ease: "power3.out"
-            }, "-=0.2");
-        }
-
-        if ('IntersectionObserver' in window) {
-            let observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        initializeSbs2Animations();
-                        observer.disconnect(); // Disconnect to prevent multiple calls
-                    }
-                });
-            });
-
-            const sbs2Section = document.querySelector('#sbs2');
-            if (sbs2Section) {
-                observer.observe(sbs2Section);
-            }
-        } else {
-            initializeSbs2Animations();
-        }
+       
     </script>
 
   

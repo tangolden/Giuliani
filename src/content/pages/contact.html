@@ -77,59 +77,7 @@ eleventyNavigation:
         </div>
     </section>
 
-    <script>
-        function initializeContactSectionAnimations() {
-            gsap.registerPlugin(ScrollTrigger);
 
-            // Define ScrollTrigger configuration for the #cs-contact section
-            const contactScrollTrigger = {
-                trigger: "#cs-contact",
-                start: "top 10%",    // Adjust start point as needed
-                end: "top 10%",      // Adjust end point as needed
-                toggleActions: "restart none restart none"
-            };
-
-            // Animation for the #cs-form sliding in from the left with a fade
-            gsap.from("#cs-form", {
-                x: "-100%",            // Slide in from the left
-                opacity: 0,            // Start with full transparency
-                duration: 1,           // Animation duration of 1 second
-                ease: "power3.out",    // Smooth ease out
-                scrollTrigger: contactScrollTrigger
-            });
-
-            // Animation for the .border-group sliding in from the right with a fade
-            gsap.from(".cs-right-section", {
-                x: "100%",             // Slide in from the right
-                opacity: 0,            // Start with full transparency
-                duration: 1,           // Animation duration of 1 second
-                ease: "power3.out",    // Smooth ease out
-                scrollTrigger: contactScrollTrigger
-            });
-        }
-
-        if ('IntersectionObserver' in window) {
-            let observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        initializeContactSectionAnimations();
-                        observer.disconnect(); // Disconnect to prevent multiple calls
-                    }
-                });
-            });
-
-            // Observe the #cs-contact section to trigger the animations
-            const csContactSection = document.querySelector('#cs-contact');
-            if (csContactSection) {
-                observer.observe(csContactSection);
-            } else {
-                console.log('#cs-contact element not found.');  // Debug: Check if the element exists
-            }
-        } else {
-            // Fallback if IntersectionObserver isn't supported
-            initializeContactSectionAnimations();
-        }
-    </script>
 
 
     {% include 'components/cta.html' %}

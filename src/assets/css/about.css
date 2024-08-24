@@ -45,7 +45,6 @@
     /* clips img tag corners */
     overflow: hidden;
     transform: rotate(10deg);
-    opacity: 0;
   }
   #sbs2 .cs-picture img {
     width: 100%;
