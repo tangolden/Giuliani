@@ -64,10 +64,40 @@ eleventyNavigation:
         document.addEventListener("DOMContentLoaded", (event) => {
             gsap.registerPlugin(ScrollTrigger);
             
-            gsap.to(".cs-picture", {
-                x: 700,
-                duration: 3
+            gsap.fromTo(".cs-left", {
+                x: "-100%",
+                opacity: 0,
+                rotation: -80
+            },
+            {
+                x: "0%",
+                opacity: 1,
+                rotation: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".cs-left",
+                    start: "top 40%", 
+                    end: "bottom 60%",
+                    markers: true,
+                    toggleActions: "restart none restart none"
+                }
             });
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".cs-left",
+                    start: "top 40%", 
+                    end: "bottom 60%",
+                    markers: true,
+                    toggleActions: "restart none restart none"
+                }
+            });
+
+            tl.fromTo(".cs-topper", {x: "100%", opacity: 0}, {x: "0%", opacity: 1, duration: 0.3, ease: "power3.out"})
+              .fromTo(".cs-title", {x: "100%", opacity: 0}, {x: "0%", opacity: 1, duration: 0.5, ease: "power3.out"})
+              .fromTo(".cs-text", {x: "100%", opacity: 0}, {x: "0%", opacity: 1, duration: 0.7, ease: "power3.out"})
+              .fromTo(".cs-flex-group", {x: "100%", opacity: 0}, {x: "0%", opacity: 1, duration: 0.9, ease: "power3.out"})
         });
     </script>
 

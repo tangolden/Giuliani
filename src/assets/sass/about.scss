@@ -27,6 +27,7 @@
             width: calc(631 / 16 * 1em);
             height: calc(636 / 16 * 1em);
             position: relative;
+            opacity: 0;
 
             &::before {
                 content: '';
