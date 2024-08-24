@@ -24,7 +24,6 @@
     width: 39.4375em;
     height: 39.75em;
     position: relative;
-    opacity: 0;
   }
   #sbs2 .cs-left::before {
     content: "";
