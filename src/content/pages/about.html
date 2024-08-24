@@ -63,6 +63,14 @@ eleventyNavigation:
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
             gsap.registerPlugin(ScrollTrigger);
+
+            const sbs2ScrollTrigger = {
+                trigger: "#sbs2",
+                start: "top 40%",
+                end: "bottom 100%",
+                toggleActions: "restart none restart none"
+            };
+
             
             gsap.fromTo(".cs-left", {
                 x: "-100%",
@@ -75,23 +83,11 @@ eleventyNavigation:
                 rotation: 0,
                 duration: 1,
                 ease: "power3.out",
-                scrollTrigger: {
-                    trigger: ".cs-left",
-                    start: "top 40%", 
-                    end: "bottom 20%",
-                    markers: true,
-                    toggleActions: "restart none restart none"
-                }
+                scrollTrigger: sbs2ScrollTrigger
             });
 
             const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".cs-left",
-                    start: "top 40%", 
-                    end: "bottom 20%",
-                    markers: true,
-                    toggleActions: "restart none restart none"
-                }
+                scrollTrigger: sbs2ScrollTrigger
             });
 
             tl.fromTo("#sbs2 .cs-topper", {x: "100%", opacity: 0}, {x: "0%", opacity: 1, duration: 0.3, ease: "power3.out"})
