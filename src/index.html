@@ -739,10 +739,10 @@ eleventyNavigation:
             gsap.registerPlugin(ScrollTrigger);
 
             const sbsScrollTrigger = {
-                trigger: "#sbs .cs-content",
-                start: "top 80%",
+                trigger: "#sbs",
+                start: "top 40%",
                 end: "bottom 40%",
-                toggleActions: "restart reset restart reverse"
+                toggleActions: "restart reverse restart reverse"
             };
 
             const tlSbs = gsap.timeline({
