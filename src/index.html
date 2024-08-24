@@ -734,6 +734,28 @@ eleventyNavigation:
         new GalleryFilter();
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const sbsScrollTrigger = {
+                trigger: "#sbs .cs-content",
+                start: "top 80%",
+                end: "bottom 40%",
+                toggleActions: "restart reset restart reverse"
+            };
+
+            const tlSbs = gsap.timeline({
+                scrollTrigger: sbsScrollTrigger
+            });
+
+            tlSbs.from("#sbs .cs-graphic", {y: "-200%", opacity: 0, duration: 0.3, ease: "power3.out"})
+              .from("#sbs .cs-title", {y: "-200%", opacity: 0, duration: 0.5, ease: "power3.out"})
+              .from("#sbs .cs-text", {y: "-200%", opacity: 0, duration: 0.7, ease: "power3.out"})
+              .from("#sbs .cs-button-solid", {y: "-200%", opacity: 0, duration: 0.9, ease: "power3.out"});
+        });
+    </script>
+
 
 
  
