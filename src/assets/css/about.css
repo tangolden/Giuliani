@@ -61,16 +61,12 @@
   #sbs2 .cs-right {
     max-width: 33.875rem;
     margin: auto;
-  }
-  #sbs2 .cs-topper {
     text-align: center;
   }
   #sbs2 .cs-title {
-    text-align: center;
     max-width: 50rem;
   }
   #sbs2 .cs-text {
-    text-align: center;
     max-width: 46.875rem;
     margin-bottom: 1rem;
   }
@@ -84,6 +80,7 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 1rem;
     position: relative;
+    margin-bottom: 2rem;
   }
   #sbs2 .cs-flex-p {
     /* 14px - 16px */
@@ -91,6 +88,7 @@
     line-height: 1.5em;
     margin: 0 0 1rem;
     color: var(--bodyTextColor);
+    text-align: left;
   }
   #sbs2 .cs-name {
     font-size: 1rem;
@@ -100,12 +98,14 @@
     margin: 0 0 0.25rem;
     color: var(--headerColor);
     display: block;
+    text-align: left;
   }
   #sbs2 .cs-job {
     font-size: 0.875rem;
     line-height: 1.5em;
     color: var(--bodyTextColor);
     display: block;
+    text-align: left;
   }
   #sbs2 .cs-quote-icon {
     /* 60px - 136px */
