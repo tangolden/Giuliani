@@ -84,25 +84,8 @@
         }
 
         .cs-button-solid {
-            z-index: 1;
-            position: relative;
-            display: inline-block;
-            border: none;
-            border-radius: 1.875rem;
-            margin: 0;
-            background-color: transparent;
-            min-width: calc(150 / 16 * 1rem);
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
-            padding: 0;
-            text-decoration: none;
-            font-family: "League Gothic", sans-serif;
-            font-size: 0.86rem;
-            /* 46px - 56px */
-            line-height: 2.5rem;
             font-weight: 400;
-            color: #fff;
-            text-align: center;
+            font-size: 1rem;
 
             &:nth-child(1) {
                 background-image: linear-gradient(to right, #81baa0, #46a39c);
@@ -111,26 +94,6 @@
             &:nth-child(2) {
                 border: 2px solid transparent;
                 background: linear-gradient(#242745, #242745) padding-box, linear-gradient(to right, #81baa0, #46a39c) border-box;
-            }
-
-            &:before {
-                z-index: -1;
-                position: absolute;
-                top: 0;
-                left: 0;
-                content: "";
-                opacity: 1;
-                border-radius: 1.875rem;
-                background: #659cdf;
-                height: 100%;
-                width: 0%;
-                transition: width 0.3s;
-            }
-
-            &:hover {
-                &:before {
-                    width: 100%;
-                }
             }
         }
 
