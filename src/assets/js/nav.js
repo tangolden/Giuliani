@@ -36,7 +36,7 @@ function toggleDropdown(element) {
     }
 }
 
-// Add event listeners to each dropdown element for accessibility
+
 const dropdownElements = document.querySelectorAll(".cs-dropdown");
 dropdownElements.forEach(element => {
     let escapePressed = false;
