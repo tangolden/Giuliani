@@ -225,7 +225,7 @@
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 0.75rem 1rem;
-    position: relative;
+    position: absolute;
   }
   #cs-navigation .cs-container {
     display: flex;
@@ -286,8 +286,8 @@
     width: clamp(1.5rem, 2vw, 1.75rem);
   }
   #cs-navigation .cs-line {
-    position: absolute;
     left: 50%;
+    position: absolute;
     transform: translateX(-50%);
     border-radius: 2px;
     background-color: var(--primary);
@@ -645,6 +645,7 @@
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 0 1rem;
+    position: absolute;
   }
   #cs-navigation .cs-container {
     display: flex;

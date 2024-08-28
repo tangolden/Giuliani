@@ -55,7 +55,6 @@
 
         .cs-picture {
             width: 100%;
-            height: auto;
             height: calc(443 / 16 * 1rem);
             border-radius: calc(24 / 16 * 1rem);
             display: block;
@@ -107,7 +106,7 @@
 
         .cs-picture {
             /* 465px - 617px */
-            width: clamp(28.0625rem, 53vw, 41.5625rem);
+            width: clamp(20.0625rem, 53vw, 41.5625rem);
             position: absolute;
             left: 25px;
             height: 100%;
