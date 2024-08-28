@@ -19,12 +19,11 @@
   }
   #RTsbs-459 .cs-container::after {
     position: absolute;
-    top: -10%;
     right: 75px;
     content: "";
     border-right: 1px solid #324073;
     border-left: 1px solid #324073;
-    height: 110%;
+    height: 100%;
     width: 75px;
     pointer-events: none;
   }
@@ -205,8 +204,6 @@
   #RTsbs-459 .cs-container::after {
     right: 200px;
     width: 200px;
-    height: 100%;
-    top: auto;
   }
   #RTsbs-459 .cs-content {
     margin: 0;
