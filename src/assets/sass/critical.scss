@@ -21,11 +21,12 @@
 
             &::after {
                 position: absolute;
+                top: -10%;
                 right: 75px;
                 content: "";
                 border-right: 1px solid #324073;
                 border-left: 1px solid #324073;
-                height: 100%;
+                height: 110%;
                 width: 75px;
                 pointer-events: none;
             }
@@ -231,6 +232,8 @@
             &::after {
                 right: 200px;
                 width: 200px;
+                height: 100%;
+                top: auto;
             }
         }
 
