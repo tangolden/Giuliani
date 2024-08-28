@@ -7,6 +7,7 @@
     padding-top: clamp(2rem, 5vw, 6.25rem);
     position: relative;
     background-image: radial-gradient(#2b2e4f, #111126);
+    padding-bottom: 3.75rem;
   }
   #RTsbs-459 .cs-container {
     display: flex;
@@ -194,7 +195,7 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #RTsbs-459 {
-    padding-bottom: 12.5rem;
+    padding-bottom: 6.25rem;
   }
   #RTsbs-459 .cs-container {
     position: relative;
