@@ -92,7 +92,7 @@
     position: relative;
     opacity: 0;
     transform: translateX(50rem);
-    display: block;
+    display: flex;
     height: 0;
     width: 100%;
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
@@ -106,7 +106,7 @@
     width: 100%;
     object-fit: scale-down;
   }
-  #RTsbs-459 .cs-picture::after {
+  #RTsbs-459 .cs-picture::before {
     position: absolute;
     top: clamp(103%, 48vw, 110%);
     left: 11%;
