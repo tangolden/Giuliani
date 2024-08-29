@@ -220,7 +220,8 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #RTsbs-459 {
-    padding-bottom: 6.25rem;
+        padding-top: 6.25rem;
+        padding-bottom: 6.25rem;
         .cs-container {
             position: relative;
             justify-content: center;
@@ -270,6 +271,10 @@
         .number {
             font-size: 5.7vw;
         }
+
+        .cs-title {
+            margin-bottom: 2rem;
+        }
     }
 }
 
@@ -279,6 +284,10 @@
         .cs-content {
             /* 90px - 108px */
             margin-right: clamp(5rem, 8.5vw, 6.75rem);
+        }
+
+        .cs-title {
+            margin-bottom: 1rem;
         }
     }
 }
