@@ -91,7 +91,6 @@
     z-index: 1;
     position: relative;
     opacity: 0;
-    transform: translateY(50rem);
     transform: translateX(50rem);
     display: block;
     height: 0;
@@ -120,7 +119,6 @@
   }
   #RTsbs-459 .cs-picture.active {
     opacity: 1;
-    transform: translateY(0);
     transform: translateX(0);
     height: 27.6875rem;
   }
