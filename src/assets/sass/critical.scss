@@ -120,22 +120,22 @@
                 object-fit: scale-down;
             }
 
-            &::before {
-                position: absolute;
-                top: clamp(103%, 48vw, 110%);
-                left: 11%;
-                content: "";
-                border-radius: 30%;
-                background-color: #0b0b0b;
-                height: 30px;
-                width: 95%;
-                filter: blur(25px);
-            }
-
             &.active {
                 opacity: 1;
                 transform: translateX(0);
                 height: calc(443 / 16 * 1rem);
+
+                &::before {
+                    position: absolute;
+                    top: clamp(103%, 48vw, 110%);
+                    left: 11%;
+                    content: "";
+                    border-radius: 30%;
+                    background-color: #0b0b0b;
+                    height: 30px;
+                    width: 95%;
+                    filter: blur(25px);
+                }
             }
         }
 
