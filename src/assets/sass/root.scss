@@ -264,7 +264,7 @@
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
-        position: absolute;
+        position: relative;
 
         .cs-container {
             display: flex;
@@ -335,8 +335,8 @@
         }
 
         .cs-line {
-            left: 50%;
             position: absolute;
+            left: 50%;
             transform: translateX(-50%);
             border-radius: 2px;
             background-color: var(--primary);
@@ -750,7 +750,6 @@
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: 0 calc(16 / 16 * 1rem);
-        position: absolute;
 
         .cs-container {
             display: flex;

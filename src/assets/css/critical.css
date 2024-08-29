@@ -4,7 +4,6 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #RTsbs-459 {
-    padding-top: clamp(2rem, 5vw, 6.25rem);
     position: relative;
     background-image: radial-gradient(#2b2e4f, #111126);
   }
@@ -97,7 +96,6 @@
     height: 0;
     width: 100%;
     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-    margin-top: 1rem;
   }
   #RTsbs-459 .cs-picture img {
     position: absolute;
