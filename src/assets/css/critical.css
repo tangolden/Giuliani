@@ -5,7 +5,7 @@
 @media only screen and (min-width: 0rem) {
   #RTsbs-459 {
     position: relative;
-    background-image: radial-gradient(#2b2e4f, #111126);
+    background: #2b2e4f;
   }
   #RTsbs-459 .cs-container {
     display: flex;
