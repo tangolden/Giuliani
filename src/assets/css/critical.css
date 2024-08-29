@@ -106,7 +106,7 @@
     width: 100%;
     object-fit: scale-down;
   }
-  #RTsbs-459 .cs-picture::before {
+  #RTsbs-459 .cs-picture::after {
     position: absolute;
     top: clamp(103%, 48vw, 110%);
     left: 11%;

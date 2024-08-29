@@ -120,7 +120,7 @@
                 object-fit: scale-down;
             }
 
-            &::before {
+            &::after {
                 position: absolute;
                 top: clamp(103%, 48vw, 110%);
                 left: 11%;
