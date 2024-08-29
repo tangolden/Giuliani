@@ -17,7 +17,7 @@
             margin: auto;
             max-width: calc(1280 / 16 * 1rem);
             width: 100%;
-    
+            margin-top: -2rem;
 
             &::after {
                 position: absolute;
@@ -112,7 +112,7 @@
 
             img {
                 position: absolute;
-                top: 30px;
+                top: 0;
                 left: 0;
                 transform: rotate(-25deg);
                 height: 100%;
@@ -220,8 +220,7 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #RTsbs-459 {
-        padding-top: 6.25rem;
-        padding-bottom: 6.25rem;
+    padding-bottom: 6.25rem;
         .cs-container {
             position: relative;
             justify-content: center;
@@ -256,7 +255,6 @@
 
             img {
                 object-fit: cover;
-                top: 0;
             }
         }
 
@@ -272,10 +270,6 @@
         .number {
             font-size: 5.7vw;
         }
-
-        .cs-title {
-            margin-bottom: 2rem;
-        }
     }
 }
 
@@ -285,10 +279,6 @@
         .cs-content {
             /* 90px - 108px */
             margin-right: clamp(5rem, 8.5vw, 6.75rem);
-        }
-
-        .cs-title {
-            margin-bottom: 1rem;
         }
     }
 }
