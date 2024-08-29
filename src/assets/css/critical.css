@@ -6,7 +6,6 @@
   #RTsbs-459 {
     position: relative;
     background-image: radial-gradient(#2b2e4f, #111126);
-    padding-top: 3rem;
   }
   #RTsbs-459 .cs-container {
     display: flex;
@@ -99,7 +98,7 @@
   }
   #RTsbs-459 .cs-picture img {
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 0;
     transform: rotate(-25deg);
     height: 100%;
@@ -225,6 +224,7 @@
   }
   #RTsbs-459 .cs-picture img {
     object-fit: cover;
+    top: 0;
   }
   #RTsbs-459 .more {
     height: 200px; /* Sets height to 200px */
