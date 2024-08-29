@@ -15,7 +15,7 @@
     margin: auto;
     max-width: 80rem;
     width: 100%;
-    margin-top: 12rem;
+    margin-top: -2rem;
   }
   #RTsbs-459 .cs-container::after {
     position: absolute;
@@ -193,7 +193,6 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #RTsbs-459 {
-    padding-top: 6.25rem;
     padding-bottom: 6.25rem;
   }
   #RTsbs-459 .cs-container {
@@ -236,18 +235,12 @@
   #RTsbs-459 .number {
     font-size: 5.7vw;
   }
-  #RTsbs-459 .cs-title {
-    margin-bottom: 2rem;
-  }
 }
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #RTsbs-459 .cs-content {
     /* 90px - 108px */
     margin-right: clamp(5rem, 8.5vw, 6.75rem);
-  }
-  #RTsbs-459 .cs-title {
-    margin-bottom: 1rem;
   }
 }
 
