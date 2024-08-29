@@ -106,21 +106,21 @@
     width: 100%;
     object-fit: scale-down;
   }
-  #RTsbs-459 .cs-picture::before {
-    position: absolute;
-    top: clamp(103%, 48vw, 110%);
-    left: 11%;
-    content: "";
-    border-radius: 30%;
-    background-color: #0b0b0b;
-    height: 30px;
-    width: 95%;
-    filter: blur(25px);
-  }
   #RTsbs-459 .cs-picture.active {
     opacity: 1;
     transform: translateX(0);
     height: 27.6875rem;
+  }
+  #RTsbs-459 .shadow {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    content: "";
+    border-radius: 30%;
+    background-color: #0b0b0b;
+    height: 30px;
+    width: 70%;
+    filter: blur(25px);
   }
   #RTsbs-459 .more {
     position: absolute;

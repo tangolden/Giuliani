@@ -58,7 +58,6 @@ eleventyNavigation:
                 <source media="(max-width: 600px)" srcset="/assets/images/black-loafers-m.webp">
                 <source media="(min-width: 601px)" srcset="/assets/images/black-loafers.png">
                 <img loading="eager" decoding="async" src="/assets/images/black-loafers.png" alt="Black loafers" width="1554" height="1554">
-                <span class="shadow"></span>
             </picture>
 
             <!-- Slide 2 -->
@@ -97,6 +96,7 @@ eleventyNavigation:
                 <img loading="lazy" decoding="async" src="/assets/images/red-loafers.png" alt="Red loafers" width="1036" height="1036">
             </picture>
 
+            <span class="shadow"></span>
             <div class="indicators">
                 <div class="number">01</div>
                 <ul>
@@ -755,7 +755,7 @@ eleventyNavigation:
               .from("#sbs .cs-text", {y: "-200%", opacity: 0, duration: 0.7, ease: "power3.out"})
               .from("#sbs .cs-button-solid", {y: "-200%", opacity: 0, duration: 0.9, ease: "power3.out"});
             
-            gsap.from("#sbs .cs-picture", {
+            gsap.from("#sbs .cs-picture, #sbs .shadow", {
                 x: "-100%",
                 opacity: 0,
                 rotation: -80,
