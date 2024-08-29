@@ -122,7 +122,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 100%;
     color: var(--bodyTextColor);
-    background: yellow;
+    background-image: radial-gradient(#2b2e4f, #111126);
   }
   *,
   *:before,
@@ -225,7 +225,7 @@
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 0.75rem 1rem;
-    position: absolute;
+    position: relative;
   }
   #cs-navigation .cs-container {
     display: flex;

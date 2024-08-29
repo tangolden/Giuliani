@@ -141,7 +141,7 @@
         font-family: "Poppins", sans-serif;
         font-size: 100%;
         color: var(--bodyTextColor);
-        background: yellow;
+        background-image: radial-gradient(#2b2e4f, #111126);
     }
 
     *,
@@ -264,7 +264,7 @@
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
         padding: calc(12 / 16 * 1rem) calc(16 / 16 * 1rem);
-        position: absolute;
+        position: relative;
 
         .cs-container {
             display: flex;
