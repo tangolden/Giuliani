@@ -1,6 +1,6 @@
 module.exports = {
-    "name": "Tangolden",
-    "email": "tangoldenws@gmail.com",
+    "name": "Giuliani",
+    "email": "GiulianiStore@gmail.com",
     "phoneForTel": "+44-7805-808332",
     "phoneFormatted": "+44 7805 808332",
     "address": {
@@ -16,5 +16,5 @@ module.exports = {
         "instagram": "https://www.instagram.com/",
     },
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
-    "domain": "https://tangoldenstore.netlify.app/"
+    "domain": "https://Giulianistore.netlify.app/"
 };
