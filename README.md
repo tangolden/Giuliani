@@ -9,7 +9,7 @@
   A refined, premium website concept for a luxury footwear brand, built on top of the CodeStitch Intermediate Website Kit (Eleventy + Nunjucks + SASS) and customised with bespoke code, styling, branding and content.
   <br/><br/>
   <!-- Replace with your live link -->
-  <a href="giulianistore.netlify.app">View Live Site</a>
+  <a href="https://giulianistore.netlify.app">View Live Site</a>
   ·
   <a href="#overview">Overview</a>
   ·
