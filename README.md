@@ -92,6 +92,6 @@ Key areas where my customisations live:
 
 <p align="center">
   <sub>
-    Built using the <a href="https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-SASS">CodeStitch Intermediate Website Kit</a>, with all brand styling, structure and content customised for Giuliani.
+    Built using the <a href="https://github.com/CodeStitchOfficial/Intermediate-Website-Kit-SASS">CodeStitch Intermediate Website Kit</a>, with all brand styling, structure and code customised for Giuliani.
   </sub>
 </p>
